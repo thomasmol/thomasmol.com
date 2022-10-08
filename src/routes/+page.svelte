@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ArrowDown from '$lib/icons/ArrowDown.svelte';
+	import ExternalLink from '$lib/icons/ExternalLink.svelte';
 	import Github from '$lib/icons/Github.svelte';
 	import Home from '$lib/icons/Home.svelte';
 	import Laptop from '$lib/icons/Laptop.svelte';
@@ -55,15 +56,17 @@
 <main class="">
 	<section id="hero" class="mt-14 max-h-screen overflow-hidden bg-stone-900 backdrop-blur-0">
 		<img
-			src="/images/dalle-laptop-large.png"
+			src="/images/dalle-laptop.webp"
 			alt=""
-			class="absolute -z-50   blur-lg brightness-[0.4]" />
+			height="100%"
+			width="100%"
+			class="absolute -z-50 blur-lg brightness-[0.4]" />
 		<div class="container space-y-4 pt-10 text-center md:pt-32">
 			<img
-				src="/images/about.png"
+				src="/images/about.webp"
 				alt="Thomas Mol"
-				width="auto"
-				height="auto"
+				width="8rem"
+				height="8rem"
 				class="mx-auto h-auto w-32 bg-stone-200 shadow-xl shadow-stone-800 first:rounded-full md:mb-10" />
 			<h1 class="mb-2 text-4xl font-bold text-stone-100">Thomas Mol</h1>
 			<h2 class="text-2xl font-bold text-stone-200">Web en app developer uit Utrecht</h2>
@@ -101,7 +104,7 @@
 		</div>
 	</section>
 
-	<section id="services" class="md:my-24">
+	<section id="services" class="my-16 md:my-32">
 		<div class="container">
 			<header class="space-y-2 py-20 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
@@ -126,7 +129,9 @@
 				</div>
 				<div class="order-first md:order-none">
 					<img
-						src="/images/dalle-laptop.png"
+						src="/images/dalle-laptop.webp"
+						width="100%"
+						height="100%"
 						alt="A Johannes Vermeer style painting of a laptop"
 						title="A Johannes Vermeer style painting of a laptop"
 						class="rounded-xl shadow-xl shadow-stone-200 dark:shadow-stone-800" />
@@ -134,9 +139,11 @@
 
 				<div class="mt-10 md:mt-0">
 					<img
-						src="/images/dalle-smartphone.png"
-						alt="A Johannes Vermeer style painting of a laptop"
-						title="A Johannes Vermeer style painting of a laptop"
+						src="/images/dalle-smartphone.webp"
+						width="100%"
+						height="100%"
+						alt="A Johannes Vermeer style painting of a robot holding a smartphone"
+						title="A Johannes Vermeer style painting of a robot holding a smartphone"
 						class="rounded-xl shadow-xl shadow-stone-200 dark:shadow-stone-800" />
 				</div>
 				<div class="space-y-2">
@@ -155,7 +162,7 @@
 		</div>
 	</section>
 
-	<section id="portfolio" class="md:my-24">
+	<section id="portfolio" class="my-16 md:my-32">
 		<div class="container">
 			<header class="space-y-2 py-20 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
@@ -166,7 +173,7 @@
 				<a
 					href="https://bizzfit.app"
 					target="_blank"
-					class="rounded-lg bg-stone-50 shadow-md hover:shadow-lg dark:bg-stone-800">
+					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
 					<img src="" class="h-20 rounded-t-lg" alt="" />
 					<div class="space-y-4 p-5">
 						<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">BizzFit</h3>
@@ -180,7 +187,7 @@
 				<a
 					href="https://occultagency.com"
 					target="_blank"
-					class="rounded-lg bg-stone-50 shadow-md hover:shadow-lg dark:bg-stone-800">
+					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
 					<img src="" class="h-20 rounded-t-lg" alt="" />
 					<div class="space-y-4 p-5">
 						<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">Occult.agency</h3>
@@ -195,31 +202,78 @@
 		</div>
 	</section>
 
-	<section id="contact" class="md:my-24">
+	<section id="contact" class="my-16 md:my-32">
 		<div class="container">
-			<header class="space-y-2 py-20 text-center">
+			<header class="space-y-2 py-10 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
 					Neem contact met mij op
 				</h1>
 			</header>
 			<div class="text-center">
 				<h3 class="mb-4 text-xl text-stone-800 dark:text-stone-100">
-					Samen werken? Stuur me een berichtje via een van deze kanalen!
+					Samen werken? Stuur me een berichtje via <a
+						href="http://linkedin.com/in/thomas-mol"
+						target="_blank"
+						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						rel="noopener noreferrer"
+						>LinkedIn <span class="inline-flex h-6  align-text-bottom "><ExternalLink /></span>
+					</a>
+					of
+					<a
+						href="http://twitter.com/thomas_a_mol"
+						target="_blank"
+						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						rel="noopener noreferrer"
+						>Twitter <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
+					</a>!
 				</h3>
-				<div class="inline-flex gap-5 p-10">
-					<a
-						href="https://linkedin.com/in/thomas-mol"
-						target="_blank"
-						class=" inline-flex h-12 w-12 gap-2 p-1 font-semibold text-stone-700 hover:text-stone-400 dark:text-stone-200">
-						<Linkedin />
-					</a>
-					<a
-						href="https://twitter.com/thomas_a_mol"
-						target="_blank"
-						class="inling-flex h-12 w-12 gap-2 p-1 font-semibold text-stone-700 hover:text-stone-400 dark:text-stone-200">
-						<Twitter />
-					</a>
-				</div>
+
+				<h3 class="py-4 text-2xl font-bold text-stone-800 dark:text-stone-100">
+					Of plan gelijk een meeting:
+				</h3>
+				<!-- Cal inline embed code begins -->
+				<div id="my-cal-inline" class="h-full w-full overflow-hidden p-2" />
+				<script type="text/javascript">
+					(function (C, A, L) {
+						let p = function (a, ar) {
+							a.q.push(ar);
+						};
+						let d = C.document;
+						C.Cal =
+							C.Cal ||
+							function () {
+								let cal = C.Cal;
+								let ar = arguments;
+								if (!cal.loaded) {
+									cal.ns = {};
+									cal.q = cal.q || [];
+									d.head.appendChild(d.createElement('script')).src = A;
+									cal.loaded = true;
+								}
+								if (ar[0] === L) {
+									const api = function () {
+										p(api, arguments);
+									};
+									const namespace = ar[1];
+									api.q = api.q || [];
+									typeof namespace === 'string'
+										? (cal.ns[namespace] = api) && p(api, ar)
+										: p(cal, ar);
+									return;
+								}
+								p(cal, ar);
+							};
+					})(window, 'https://app.cal.com/embed/embed.js', 'init');
+					Cal('init', { origin: 'https://app.cal.com' });
+
+					Cal('inline', {
+						elementOrSelector: '#my-cal-inline',
+						calLink: 'thomasmol/30min'
+					});
+
+					Cal('ui', { styles: { branding: { brandColor: '#77a2bc' } } });
+				</script>
+				<!-- Cal inline embed code ends -->
 			</div>
 		</div>
 	</section>
