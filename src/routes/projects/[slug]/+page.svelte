@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let data : any;
-	var options : object = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	export let data: any;
+	var options: object = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 </script>
 
 <svelte:head>
@@ -9,12 +9,13 @@
 
 <div class="px-4 py-20 lg:px-16">
 	<article class="prose mx-auto">
-		<a href="/projects" class="mb-6 block text-left no-underline font-semibold text-gray-500 hover:underline"
+		<a
+			href="/projects"
+			class="mb-6 block text-left font-semibold text-gray-500 no-underline hover:underline"
 			>&#8249; Terug naar alle projecten</a>
 
-		<h1>{data.title}</h1>
+		<h1 class="dark:text-stone-100">{data.title}</h1>
 		<small class="capitalize">{new Date(data.date).toLocaleDateString('nl-NL', options)}</small>
 		<svelte:component this={data.content} />
-		<img src={data.thumbnail} alt="" class="h-96 w-full object-cover" />
 	</article>
 </div>

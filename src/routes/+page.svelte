@@ -22,6 +22,9 @@
 		portfolio = document.getElementById('portfolio')!.offsetTop;
 		contact = document.getElementById('contact')!.offsetTop;
 	});
+
+	export let data;
+	const projects : any = Object.values(data);
 </script>
 
 <svelte:head>
@@ -73,7 +76,8 @@
 			<p class="mx-auto max-w-xl text-xl text-stone-300">
 				Bezig met het creëren van een gezondere werkvloer met <a
 					href="https://bizzfit.app"
-					target="_blank" rel="noreferrer"
+					target="_blank"
+					rel="noreferrer"
 					class="font-semibold text-amber-500 hover:text-amber-600">bizzfit</a
 				>,<br /> werkzaam als freelance web/app ontwikkelaar,<br /> en de master Business Informatics
 				aan de UU aan het afronden.
@@ -81,19 +85,22 @@
 			<div class="inline-flex justify-center gap-4 py-2 md:py-10">
 				<a
 					href="https://linkedin.com/in/thomas-mol"
-					target="_blank" rel="noreferrer"
+					target="_blank"
+					rel="noreferrer"
 					class=" inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Linkedin />
 				</a>
 				<a
 					href="https://github.com/thomasmol"
-					target="_blank" rel="noreferrer"
+					target="_blank"
+					rel="noreferrer"
 					class="inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Github />
 				</a>
 				<a
 					href="https://twitter.com/thomas_a_mol"
-					target="_blank" rel="noreferrer"
+					target="_blank"
+					rel="noreferrer"
 					class="inling-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Twitter />
 				</a>
@@ -170,34 +177,22 @@
 				</h1>
 			</header>
 			<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
-				<a
-					href="https://bizzfit.app"
-					target="_blank" rel="noreferrer"
-					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
-					<img src="" class="h-20 rounded-t-lg" alt="" />
-					<div class="space-y-4 p-5">
-						<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">BizzFit</h3>
-						<p class="text-stone-700 dark:text-stone-200">
-							BizzFit is een app voor ondernemers die hun bedrijf willen verbeteren. Hiervoor ben ik
-							bezig met de ontwikkeling van de app en de landing page.
-						</p>
-						<p class="font-semibold text-amber-600">Klik hier voor meer</p>
-					</div>
-				</a>
-				<a
-					href="https://occultagency.com"
-					target="_blank" rel="noreferrer"
-					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
-					<img src="" class="h-20 rounded-t-lg" alt="" />
-					<div class="space-y-4 p-5">
-						<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">Occult.agency</h3>
-						<p class="text-stone-700 dark:text-stone-200">
-							Een website voor een agentschap in de muziekindustrie. Hiervoor heb ik een Wordpress
-							thema gebouwd.
-						</p>
-						<p class="font-semibold text-neutral-600 dark:text-neutral-300">Klik hier voor meer</p>
-					</div>
-				</a>
+				{#each projects as project}
+					<a
+						href="/projects/{project.path}"
+						class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
+						<img src={project.meta.thumbnail} class="h-20 rounded-t-lg" alt="" />
+						<div class="space-y-4 p-5">
+							<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">
+								{project.meta.title}
+							</h3>
+							<p class="text-stone-700 dark:text-stone-200">
+								{project.meta.excerpt}
+							</p>
+							<p class="font-semibold text-stone-200">Klik hier voor meer</p>
+						</div>
+					</a>
+				{/each}
 			</div>
 		</div>
 	</section>
@@ -221,59 +216,21 @@
 					of
 					<a
 						href="http://twitter.com/thomas_a_mol"
-						target="_blank" 
+						target="_blank"
 						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>Twitter <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
 					</a>!
 				</h3>
-
-				<h3 class="py-4 text-2xl font-bold text-stone-800 dark:text-stone-100">
-					Of plan gelijk een meeting:
-				</h3>
-				<!-- Cal inline embed code begins -->
-				<div id="my-cal-inline" class="h-full w-full overflow-hidden p-2" />
-				<script type="text/javascript">
-					(function (C, A, L) {
-						let p = function (a, ar) {
-							a.q.push(ar);
-						};
-						let d = C.document;
-						C.Cal =
-							C.Cal ||
-							function () {
-								let cal = C.Cal;
-								let ar = arguments;
-								if (!cal.loaded) {
-									cal.ns = {};
-									cal.q = cal.q || [];
-									d.head.appendChild(d.createElement('script')).src = A;
-									cal.loaded = true;
-								}
-								if (ar[0] === L) {
-									const api = function () {
-										p(api, arguments);
-									};
-									const namespace = ar[1];
-									api.q = api.q || [];
-									typeof namespace === 'string'
-										? (cal.ns[namespace] = api) && p(api, ar)
-										: p(cal, ar);
-									return;
-								}
-								p(cal, ar);
-							};
-					})(window, 'https://app.cal.com/embed/embed.js', 'init');
-					Cal('init', { origin: 'https://app.cal.com' });
-
-					Cal('inline', {
-						elementOrSelector: '#my-cal-inline',
-						calLink: 'thomasmol/30min'
-					});
-
-					Cal('ui', { styles: { branding: { brandColor: '#77a2bc' } } });
-				</script>
-				<!-- Cal inline embed code ends -->
+				<h4 class="py-4 text-xl  text-stone-800 dark:text-stone-100">
+					Of plan gelijk een meeting via <a
+						href="https://cal.com/thomasmol/30min"
+						target="_blank"
+						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						rel="noopener noreferrer"
+						>Cal.com <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
+					</a>
+				</h4>
 			</div>
 		</div>
 	</section>
