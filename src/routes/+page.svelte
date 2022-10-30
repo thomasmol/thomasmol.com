@@ -73,7 +73,7 @@
 			<p class="mx-auto max-w-xl text-xl text-stone-300">
 				Bezig met het creëren van een gezondere werkvloer met <a
 					href="https://bizzfit.app"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class="font-semibold text-amber-500 hover:text-amber-600">bizzfit</a
 				>,<br /> werkzaam als freelance web/app ontwikkelaar,<br /> en de master Business Informatics
 				aan de UU aan het afronden.
@@ -81,19 +81,19 @@
 			<div class="inline-flex justify-center gap-4 py-2 md:py-10">
 				<a
 					href="https://linkedin.com/in/thomas-mol"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class=" inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Linkedin />
 				</a>
 				<a
 					href="https://github.com/thomasmol"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class="inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Github />
 				</a>
 				<a
 					href="https://twitter.com/thomas_a_mol"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class="inling-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-300 hover:text-stone-400">
 					<Twitter />
 				</a>
@@ -172,7 +172,7 @@
 			<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 				<a
 					href="https://bizzfit.app"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
 					<img src="" class="h-20 rounded-t-lg" alt="" />
 					<div class="space-y-4 p-5">
@@ -186,7 +186,7 @@
 				</a>
 				<a
 					href="https://occultagency.com"
-					target="_blank"
+					target="_blank" rel="noreferrer"
 					class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
 					<img src="" class="h-20 rounded-t-lg" alt="" />
 					<div class="space-y-4 p-5">
@@ -221,7 +221,7 @@
 					of
 					<a
 						href="http://twitter.com/thomas_a_mol"
-						target="_blank"
+						target="_blank" 
 						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>Twitter <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
