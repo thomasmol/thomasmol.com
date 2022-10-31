@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Footer from '$lib/components/Footer.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import ArrowDown from '$lib/icons/ArrowDown.svelte';
 	import ExternalLink from '$lib/icons/ExternalLink.svelte';
 	import Github from '$lib/icons/Github.svelte';
@@ -11,7 +13,6 @@
 	import { onMount } from 'svelte';
 
 	let y: number;
-	let currentYear = new Date().getFullYear();
 	let hero: number;
 	let services: number;
 	let portfolio: number;
@@ -23,8 +24,8 @@
 		contact = document.getElementById('contact')!.offsetTop;
 	});
 
-	export let data;
-	const projects : any = Object.values(data);
+	export let data: any;
+	const projects: any = Object.values(data);
 </script>
 
 <svelte:head>
@@ -141,7 +142,7 @@
 						height="100%"
 						alt="A Johannes Vermeer style painting of a laptop"
 						title="A Johannes Vermeer style painting of a laptop"
-						class="rounded-xl shadow-xl shadow-stone-200 dark:shadow-stone-800" />
+						class="rounded-xl shadow-xl shadow-stone-300 dark:shadow-stone-800" />
 				</div>
 
 				<div class="mt-10 md:mt-0">
@@ -151,7 +152,7 @@
 						height="100%"
 						alt="A Johannes Vermeer style painting of a robot holding a smartphone"
 						title="A Johannes Vermeer style painting of a robot holding a smartphone"
-						class="rounded-xl shadow-xl shadow-stone-200 dark:shadow-stone-800" />
+						class="rounded-xl shadow-xl shadow-stone-300 dark:shadow-stone-800" />
 				</div>
 				<div class="space-y-2">
 					<div class="mb-6 flex gap-4">
@@ -171,27 +172,20 @@
 
 	<section id="portfolio" class="my-16 md:my-32">
 		<div class="container">
-			<header class="space-y-2 py-20 text-center">
+			<header class="space-y-4 py-20 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
 					Mijn laatste projecten
 				</h1>
+				<p>
+					<a
+						href="/projects"
+						class="mt-3 text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
+						>Al mijn projecten &RightArrow;</a>
+				</p>
 			</header>
 			<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 				{#each projects as project}
-					<a
-						href="/projects/{project.path}"
-						class="rounded-lg bg-white shadow-md hover:shadow-lg dark:bg-stone-800">
-						<img src={project.meta.thumbnail} class="h-20 rounded-t-lg" alt="" />
-						<div class="space-y-4 p-5">
-							<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">
-								{project.meta.title}
-							</h3>
-							<p class="text-stone-700 dark:text-stone-200">
-								{project.meta.excerpt}
-							</p>
-							<p class="font-semibold text-stone-200">Klik hier voor meer</p>
-						</div>
-					</a>
+					<ProjectCard {project} />
 				{/each}
 			</div>
 		</div>
@@ -209,7 +203,7 @@
 					Samen werken? Stuur me een berichtje via <a
 						href="http://linkedin.com/in/thomas-mol"
 						target="_blank"
-						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						class="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>LinkedIn <span class="inline-flex h-6  align-text-bottom "><ExternalLink /></span>
 					</a>
@@ -217,7 +211,7 @@
 					<a
 						href="http://twitter.com/thomas_a_mol"
 						target="_blank"
-						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						class="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>Twitter <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
 					</a>!
@@ -226,7 +220,7 @@
 					Of plan gelijk een meeting via <a
 						href="https://cal.com/thomasmol/30min"
 						target="_blank"
-						class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+						class="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>Cal.com <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
 					</a>
@@ -236,15 +230,4 @@
 	</section>
 </main>
 
-<footer class="bg-stone-100 dark:bg-stone-800">
-	<div class="container space-y-4 py-6">
-		<div class="flex flex-col gap-1 text-left text-stone-600 dark:text-stone-300">
-			<small><strong>KVK</strong> 80831486</small>
-			<small><strong>BTW-id</strong> NL003493681B76</small>
-			<small><strong>IBAN</strong> NL64 ASNB 0267 1595 44</small>
-		</div>
-		<p class="text-left text-sm font-semibold capitalize text-stone-500 dark:text-stone-400">
-			&copy; {currentYear} Thomas Mol
-		</p>
-	</div>
-</footer>
+<Footer />

@@ -1,6 +1,13 @@
 <script lang="ts">
+	import Footer from '$lib/components/Footer.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import Github from '$lib/icons/Github.svelte';
+	import Home from '$lib/icons/Home.svelte';
+	import Linkedin from '$lib/icons/Linkedin.svelte';
+	import Twitter from '$lib/icons/Twitter.svelte';
+
 	export let data;
-	const posts: any = Object.values(data);
+	const projects: any = Object.values(data);
 	var options: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
 		year: 'numeric',
@@ -13,32 +20,53 @@
 	<title>Projecten</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 pt-20 lg:px-16">
-	<a href="/" class="mt-6 block text-left font-semibold text-stone-500 no-underline hover:underline"
-		>&#8249; Terug naar home</a>
-	<h1 class="py-10 text-2xl font-semibold text-gray-900">Al mijn projecten</h1>
-	<div class="mb-20 grid gap-10 md:grid-cols-3">
-		{#each posts as post}
+<nav class="fixed top-0 z-50 w-full bg-stone-50/90 backdrop-blur-xl dark:bg-stone-900/90">
+	<div class="container flex justify-between py-4">
+		<a
+			href="/"
+			class="flex h-5 w-5 gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200"
+			><Home /></a>
+		<div class="flex space-x-8 capitalize ">
 			<a
-				href="/projects/{post.path}"
-				class="flex basis-1/3 flex-col justify-between rounded-lg border bg-stone-50 hover:bg-stone-100 hover:shadow-sm">
-				<img
-					src={post.meta.thumbnail}
-					alt="Project thumbnail"
-					class="h-40 w-full overflow-hidden rounded-t-lg object-cover" />
-				<h2 class="px-4 pt-4 text-xl font-semibold text-gray-800">
-					{post.meta.title}
-				</h2>
-				<div class="px-4 pb-4">
-					<h3 class="text-semibold py-3 text-sm capitalize text-stone-500">
-						{new Date(post.meta.date).toLocaleDateString('nl-NL', options)}
-					</h3>
-					<p class="line-clamp-2 text-gray-600">
-						{post.meta.excerpt}
-					</p>
-					<p class="mt-4 font-bold text-stone-500">Lees meer</p>
-				</div>
+				href="https://linkedin.com/in/thomas-mol"
+				target="_blank"
+				rel="noreferrer"
+				class=" inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-500 hover:text-stone-700">
+				<Linkedin />
 			</a>
-		{/each}
+			<a
+				href="https://github.com/thomasmol"
+				target="_blank"
+				rel="noreferrer"
+				class="inline-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-500 hover:text-stone-700">
+				<Github />
+			</a>
+			<a
+				href="https://twitter.com/thomas_a_mol"
+				target="_blank"
+				rel="noreferrer"
+				class="inling-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-500 hover:text-stone-700">
+				<Twitter />
+			</a>
+		</div>
 	</div>
-</div>
+</nav>
+<main>
+	<div class="container mx-auto px-4 pt-20 lg:px-16">
+		<header class="space-y-4 py-20 text-center">
+			<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">Al mijn projecten</h1>
+			<p>
+				<a
+					href="/"
+					class="mt-3 text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
+					>&leftarrow; Naar home</a>
+			</p>
+		</header>
+		<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+			{#each projects as project}
+			<ProjectCard {project} />
+			{/each}
+		</div>
+	</div>
+</main>
+<Footer />
