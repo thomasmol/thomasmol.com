@@ -53,7 +53,7 @@
 
 		<p class="my-8">
 				<a
-					href="/projects"
+					href="../projects"
 					class=" text-blue-600 no-underline hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 					>&leftarrow; Naar alle projecten</a>
 			</p>

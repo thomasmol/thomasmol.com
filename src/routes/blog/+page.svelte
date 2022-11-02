@@ -24,7 +24,7 @@
 <nav class="fixed top-0 z-50 w-full bg-stone-50/90 backdrop-blur-xl dark:bg-stone-900/90">
 	<div class="container flex justify-between py-4">
 		<a
-			href="/"
+			href="../"
 			class="flex h-5 w-5 gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200"
 			><Home /></a>
 		<div class="flex space-x-8 capitalize ">
@@ -58,7 +58,7 @@
 			<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">Alle blog posts</h1>
 			<p>
 				<a
-					href="/"
+					href="../"
 					class="mt-3 text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 					>&leftarrow; Naar home</a>
 			</p>

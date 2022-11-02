@@ -1,7 +1,7 @@
 import type { Load } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').Load} */
-export const load: Load = async () => {
+export const load: Load = async ({params}) => {
 	const allProjectFiles = import.meta.glob<any>('../lib/projects/*.md');
 	const iterableProjectFiles = Object.entries(allProjectFiles);
 	const allProjects = await Promise.all(
@@ -19,6 +19,7 @@ export const load: Load = async () => {
 		return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime();
 	});
 	const recentProjects = sortedProjects.slice(0, 2);
+	// console.log(params.lang); use this param to get the language
 
 	return recentProjects;
 };

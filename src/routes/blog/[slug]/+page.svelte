@@ -9,7 +9,7 @@
 
 <div class="px-4 py-20 lg:px-16">
 	<article class="prose mx-auto">
-		<a href="/blog" class="mb-6 block text-left no-underline font-semibold text-gray-500 hover:underline"
+		<a href="../blog" class="mb-6 block text-left no-underline font-semibold text-gray-500 hover:underline"
 			>&#8249; Terug naar alle blog posts</a>
 
 		<h1>{data.title}</h1>

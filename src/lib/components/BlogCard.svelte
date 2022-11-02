@@ -9,7 +9,7 @@
   border-stone-200 bg-white transition duration-100
    hover:shadow-xl dark:border-stone-900 dark:bg-stone-800 shadow-stone-800">
 	<div class="bg-stone-100 dark:bg-stone-600">
-		<img src={blog.meta.thumbnail} class="mx-auto max-h-64 w-auto " alt="" />
+		<img src={blog.meta.thumbnail} class="mx-auto max-h-64 w-auto " alt="{blog.meta.title}" width="100%" height="100%" />
 	</div>
 	<div class="px-5 pt-5">
 		<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">

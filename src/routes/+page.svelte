@@ -126,9 +126,9 @@
 						<div class="inline-block h-8 rounded bg-[#ca9a7d] p-1.5 text-stone-100">
 							<Laptop />
 						</div>
-						<h3 class="self-end text-xl font-semibold text-stone-800 dark:text-stone-100">
+						<h2 class="self-end text-xl font-semibold text-stone-800 dark:text-stone-100">
 							Websites
-						</h3>
+						</h2>
 					</div>
 					<p class="text-lg text-stone-700 dark:text-stone-200">
 						Ik maak websites op maat, met CMS zodat jij makkelijk nieuwe content kan uploaden en
@@ -159,7 +159,7 @@
 						<div class="inline-block h-8 rounded bg-[#77a2bc]  p-1.5  text-stone-100">
 							<Phone />
 						</div>
-						<h3 class="text-xl font-semibold text-stone-800 dark:text-stone-100">Apps</h3>
+						<h2 class="text-xl font-semibold text-stone-800 dark:text-stone-100">Apps</h2>
 					</div>
 					<p class="text-lg text-stone-700 dark:text-stone-200">
 						Webapp of smartphone app nodig? Ik maak ze voor je, met een mooie interface en een goede
@@ -178,7 +178,7 @@
 				</h1>
 				<p>
 					<a
-						href="/projects"
+						href="projects"
 						class="mt-3 text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						>Al mijn projecten &RightArrow;</a>
 				</p>
@@ -199,7 +199,7 @@
 				</h1>
 			</header>
 			<div class="text-center">
-				<h3 class="mb-4 text-xl text-stone-800 dark:text-stone-100">
+				<h2 class="mb-4 text-xl text-stone-800 dark:text-stone-100">
 					Samen werken? Stuur me een berichtje via <a
 						href="http://linkedin.com/in/thomas-mol"
 						target="_blank"
@@ -215,8 +215,8 @@
 						rel="noopener noreferrer"
 						>Twitter <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
 					</a>!
-				</h3>
-				<h4 class="py-4 text-xl  text-stone-800 dark:text-stone-100">
+				</h2>
+				<h3 class="py-4 text-xl  text-stone-800 dark:text-stone-100">
 					Of plan gelijk een meeting via <a
 						href="https://cal.com/thomasmol/30min"
 						target="_blank"
@@ -224,10 +224,9 @@
 						rel="noopener noreferrer"
 						>Cal.com <span class="inline-flex h-6 align-text-bottom"><ExternalLink /></span>
 					</a>
-				</h4>
+				</h3>
 			</div>
 		</div>
 	</section>
 </main>
-
 <Footer />
