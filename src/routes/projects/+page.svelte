@@ -5,10 +5,11 @@
 	import Home from '$lib/icons/Home.svelte';
 	import Linkedin from '$lib/icons/Linkedin.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
+	import type { PageData } from './$types';
 
-	export let data;
-	const projects: any = Object.values(data);
-	var options: Intl.DateTimeFormatOptions = {
+	export let data: PageData;
+
+		var options: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
 		year: 'numeric',
 		month: 'long',
@@ -52,7 +53,7 @@
 	</div>
 </nav>
 <main>
-	<div class="container mx-auto px-4 pt-20 lg:px-16">
+	<div class="container mx-auto px-4 pt-20 lg:px-16 pb-20">
 		<header class="space-y-4 py-20 text-center">
 			<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">Al mijn projecten</h1>
 			<p>
@@ -62,8 +63,8 @@
 					>&leftarrow; Naar home</a>
 			</p>
 		</header>
-		<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
-			{#each projects as project}
+		<div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+			{#each data.projects as project}
 			<ProjectCard {project} />
 			{/each}
 		</div>
