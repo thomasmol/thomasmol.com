@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { format, register } from 'timeago.js';
+/* 	import { format, register } from 'timeago.js';
 	import nl from 'timeago.js/lib/lang/nl';
-	register('nl', nl);
+	register('nl', nl); */
 	export let project: any;
+	var options: object = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
 </script>
 
 <a
@@ -23,7 +25,7 @@
 			<h1 class="text-xl font-semibold text-stone-800 dark:text-stone-100">
 				{project.meta.title}
 			</h1>
-			<p class="mt-1 text-stone-400 dark:text-stone-400">{format(project.meta.date, 'nl')}</p>
+			<p class="mt-1 text-stone-400 dark:text-stone-400">{new Date(project.meta.date).toLocaleDateString('nl-NL', options)}</p>
 			<p class="mt-3 text-stone-700 dark:text-stone-200">
 				{project.meta.excerpt}
 			</p>

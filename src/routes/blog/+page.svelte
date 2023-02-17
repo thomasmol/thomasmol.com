@@ -6,9 +6,10 @@
 	import Home from '$lib/icons/Home.svelte';
 	import Linkedin from '$lib/icons/Linkedin.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
+	import type { PageData } from './$types';
 
-	export let data;
-	const blogs: any = Object.values(data);
+	export let data: PageData;
+
 	var options: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
 		year: 'numeric',
@@ -64,7 +65,7 @@
 			</p>
 		</header>
 		<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
-			{#each blogs as blog}
+			{#each data.posts as blog}
 			<BlogCard {blog} />
 			{/each}
 		</div>

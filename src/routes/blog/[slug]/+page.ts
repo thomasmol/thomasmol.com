@@ -1,6 +1,6 @@
-import type { Load } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
-export const load: Load = async ({ params }) => {
+export const load = (async ({params}) => {
 	const post = await import(`../../../lib/posts/${params.slug}.md`);
 	const {
 		layout,
@@ -31,4 +31,4 @@ export const load: Load = async ({ params }) => {
 		body,
 		content
 	};
-};
+}) satisfies PageLoad;
