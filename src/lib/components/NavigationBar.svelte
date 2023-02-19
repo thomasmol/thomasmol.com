@@ -4,11 +4,13 @@
 	import Laptop from '$lib/icons/Laptop.svelte';
 	import Linkedin from '$lib/icons/Linkedin.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
+
+	let isMenuOpen = false;
 </script>
 
 <nav class="fixed top-0 z-50 w-full bg-stone-50/90 backdrop-blur-xl dark:bg-stone-900/90">
-	<div class="container flex justify-between py-4">
-		<div class="space-x-6">
+	<div class="container flex flex-wrap justify-between gap-4 py-4">
+		<div class="space-x-2 sm:space-x-6">
 			<a
 				href="/#portfolio"
 				class="inline-flex items-center gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200 dark:hover:text-stone-400"
@@ -19,8 +21,16 @@
 				class="inline-flex items-center gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200 dark:hover:text-stone-400"
 				><Laptop /> Alle projecten
 			</a>
+			<button
+				on:click={() => {
+					isMenuOpen = !isMenuOpen;
+				}}
+				class="rounded border border-stone-700 bg-stone-800 px-1 sm:hidden">
+				📤
+			</button>
 		</div>
-		<div class="flex gap-4 text-xl capitalize ">
+
+		<div class:hidden={isMenuOpen} class="gap-8 text-xl capitalize sm:flex sm:gap-4">
 			<a
 				href="https://linkedin.com/in/thomas-mol"
 				target="_blank"
