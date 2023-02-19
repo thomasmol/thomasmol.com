@@ -1,21 +1,22 @@
 import type { PageLoad } from './$types';
 
 export const load = (async () => {
-	const allPostFiles = import.meta.glob('../../lib/projects/*.md');
-	const iterablePostFiles = Object.entries(allPostFiles);
+	const allProjectFiles = import.meta.glob<any>('../../lib/projects/*.md');
+	const iterableProjectFiles = Object.entries(allProjectFiles);
 	const allProjects = await Promise.all(
-		iterablePostFiles.map(async ([path, resolver]) => {
-			const { metadata } = await resolver();
+		iterableProjectFiles.map(async ([path, resolver]) => {
+			const metadata: any = await resolver();
+			const data = metadata.metadata;
 			const postPath = path.slice(19, -3);
 
 			return {
-				meta: metadata,
+				meta: data,
 				path: postPath
 			};
 		})
 	);
 	const sortedProjects = allProjects.sort((a, b) => {
-		return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime();
+		return new Date(b.meta.last_edited).getTime() - new Date(a.meta.last_edited).getTime();
 	});
-	return {projects: sortedProjects};
+	return { projects: sortedProjects };
 }) satisfies PageLoad;

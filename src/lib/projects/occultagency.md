@@ -8,7 +8,7 @@ excerpt: Een website voor een agentschap in de muziekindustrie. Hiervoor heb ik 
 wordcount: 0
 readtime: 0
 author: Thomas Mol
-tags: ["wordpress", "tailwindcss", "hosting"]
+tags: ["Wordpress", "TailwindCSS", "Hosting"]
 ---
 
 Wat heb ik gedaan:

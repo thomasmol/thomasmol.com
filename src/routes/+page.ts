@@ -5,7 +5,7 @@ export const load = (async () => {
 	const iterableProjectFiles = Object.entries(allProjectFiles);
 	const allProjects = await Promise.all(
 		iterableProjectFiles.map(async ([path, resolver]) => {
-			const metadata : any = await resolver();
+			const metadata: any = await resolver();
 			const data = metadata.metadata;
 			const projectPath = path.slice(16, -3);
 			return {
@@ -15,10 +15,9 @@ export const load = (async () => {
 		})
 	);
 	const sortedProjects = allProjects.sort((a, b) => {
-		return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime();
+		return new Date(b.meta.last_edited).getTime() - new Date(a.meta.last_edited).getTime();
 	});
 	const recentProjects = sortedProjects.slice(0, 6);
 
-	return {projects: recentProjects};
-
+	return { projects: recentProjects };
 }) satisfies PageLoad;

@@ -1,10 +1,11 @@
 <script lang="ts">
-/* 	import { format, register } from 'timeago.js';
+	import Clock from "$lib/icons/Clock.svelte";
+
+	/* 	import { format, register } from 'timeago.js';
 	import nl from 'timeago.js/lib/lang/nl';
 	register('nl', nl); */
 	export let project: any;
-	var options: object = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
+	var options: object = { year: 'numeric', month: 'short', day: 'numeric' };
 </script>
 
 <a
@@ -25,13 +26,21 @@
 			<h1 class="text-xl font-semibold text-stone-800 dark:text-stone-100">
 				{project.meta.title}
 			</h1>
-			<p class="mt-1 text-stone-400 dark:text-stone-400">{new Date(project.meta.date).toLocaleDateString('nl-NL', options)}</p>
+			<div class="mt-2">
+				{#each project.meta.tags as tag}
+					<span
+						class="mr-2 inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">
+						{tag}
+					</span>
+				{/each}
+			</div>
 			<p class="mt-3 text-stone-700 dark:text-stone-200">
 				{project.meta.excerpt}
 			</p>
 		</div>
 	</div>
-	<div class="px-5 pb-5">
-		<p class="mt-3 font-semibold text-blue-600 dark:text-blue-500">Lees meer &rightarrow;</p>
+	<div class="px-5 pb-5 mt-4 flex justify-between">
+		<p class="text-sm text-stone-400 dark:text-stone-400 inline-flex gap-2 items-center"><Clock/> {new Date(project.meta.last_edited).toLocaleDateString('nl-NL', options)}</p>
+		<p class="font-semibold text-blue-600 dark:text-blue-500">Lees meer &rightarrow;</p>
 	</div>
 </a>
