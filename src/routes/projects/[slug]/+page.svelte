@@ -13,7 +13,7 @@
 <NavigationBar/>
 <main>
 	<article class="prose prose-stone mx-auto dark:prose-invert px-6 mb-10">
-		<header class="space-y-4 pt-20 text-center">
+		<header class="space-y-4 mt-28 sm:mt-20 text-center">
 			<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">{data.title}</h1>
 		</header>
 		<div class="not-prose">
