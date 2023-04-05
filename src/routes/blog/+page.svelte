@@ -44,7 +44,7 @@
 				<Github />
 			</a>
 			<a
-				href="https://twitter.com/thomas_a_mol"
+				href="https://twitter.com/thomas_mol"
 				target="_blank"
 				rel="noreferrer"
 				class="inling-flex h-8 w-8 gap-2 p-1 font-semibold text-stone-500 hover:text-stone-700">

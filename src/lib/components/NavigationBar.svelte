@@ -37,7 +37,7 @@
 				<Github />
 			</a>
 			<a
-				href="https://twitter.com/thomas_a_mol"
+				href="https://twitter.com/thomas_mol"
 				target="_blank"
 				rel="noreferrer"
 				class="inline-flex items-center text-stone-500 hover:text-stone-700">

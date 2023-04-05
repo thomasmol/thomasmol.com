@@ -58,7 +58,7 @@
 					<Github />
 				</a>
 				<a
-					href="https://twitter.com/thomas_a_mol"
+					href="https://twitter.com/thomas_mol"
 					target="_blank"
 					rel="noreferrer"
 					class="text-2xl text-stone-300 hover:text-stone-400">
@@ -152,7 +152,7 @@
 					</a>
 					of
 					<a
-						href="http://twitter.com/thomas_a_mol"
+						href="http://twitter.com/thomas_mol"
 						target="_blank"
 						class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
