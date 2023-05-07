@@ -92,10 +92,10 @@
 	</section>
 
 	<section id="projects" class="my-12 ">
-		<div class="mx-auto max-w-3xl">
+		<div class="mx-auto max-w-3xl px-2 md:px-4 py-4">
 			<header class="space-y-4 py-10 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
-					What I've been working on
+					👨‍💻 What I am working on
 				</h1>
 			</header>
 			<div class="flex flex-col gap-10">

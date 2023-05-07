@@ -14,7 +14,7 @@
   border-stone-200 bg-white shadow-stone-800 transition
    duration-100 hover:shadow-xl dark:border-stone-900 dark:bg-stone-800">
 	<div class="flex flex-wrap">
-		<div class="h-72 flex-1 bg-stone-100 dark:bg-stone-600">
+		<div class="h-72 md:flex-1 bg-stone-100 dark:bg-stone-600">
 			<img
 				src={project.meta.thumbnail}
 				class=" h-full w-full object-contain"
@@ -22,7 +22,7 @@
 				width="100%"
 				height="100%" />
 		</div>
-		<div class="flex flex-1 flex-col justify-between px-5 py-5">
+		<div class="flex md:flex-1 flex-col justify-between px-5 py-5">
 			<div>
 				<h1 class="text-xl font-semibold text-stone-800 dark:text-stone-100">
 					{project.meta.title}
