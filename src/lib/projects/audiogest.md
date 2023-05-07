@@ -2,7 +2,7 @@
 title: Audiogest
 date: 2023-02-01T10:00:00.000Z
 last_edited: 2023-05-07T10:00:00.000Z
-thumbnail: /uploads/projects/interviewprocessor.png
+thumbnail: /uploads/projects/example_dark.png
 layout: project
 excerpt: Audiogest makes it easy to automatically transcribe any audio and generate useful summaries
 wordcount: 0
