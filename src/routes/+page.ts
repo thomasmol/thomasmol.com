@@ -17,7 +17,7 @@ export const load = (async () => {
 	const sortedProjects = allProjects.sort((a, b) => {
 		return new Date(b.meta.last_edited).getTime() - new Date(a.meta.last_edited).getTime();
 	});
-	const recentProjects = sortedProjects.slice(0, 6);
+	const recentProjects = sortedProjects.slice(0, 3);
 
 	return { projects: recentProjects };
 }) satisfies PageLoad;

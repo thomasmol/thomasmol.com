@@ -10,14 +10,14 @@
 	<div class="container flex flex-wrap justify-between gap-4 py-4">
 		<div class="space-x-2 sm:space-x-6">
 			<a
-				href="/#portfolio"
+				href="/"
 				class="inline-flex items-center gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200 dark:hover:text-stone-400"
 				><Home /> Home
 			</a>
 			<a
 				href="../projects"
 				class="inline-flex items-center gap-3 font-semibold text-stone-500 hover:text-stone-800 dark:text-stone-200 dark:hover:text-stone-400"
-				><Laptop /> Alle projecten
+				><Laptop /> All projects
 			</a>
 		</div>
 

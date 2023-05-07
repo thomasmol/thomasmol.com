@@ -6,8 +6,7 @@
 	<div class="container space-y-4 py-6">
 		<div class="flex flex-col gap-1 text-left text-stone-700 dark:text-stone-300">
 			<small><strong>KVK</strong> 80831486</small>
-			<small><strong>BTW-id</strong> NL003493681B76</small>
-			<small><strong>IBAN</strong> NL64 ASNB 0267 1595 44</small>
+			<small><strong>IBAN</strong> NL80 BUNQ 2088 5743 01</small>
 		</div>
 		<!-- <div class="flex flex-col gap-1 text-left text-stone-700 dark:text-stone-300">
 			<small><a href="/en">English version</a></small>

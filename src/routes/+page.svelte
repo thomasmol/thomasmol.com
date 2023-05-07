@@ -12,36 +12,53 @@
 </script>
 
 <svelte:head>
-	<title>ThomasMol.com</title>
+	<title>Thomas Mol | App Maker</title>
+	<meta
+		name="description"
+		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
+	<meta
+		name="og:description"
+		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
+	<meta name="og:title" content="Thomas Mol | App Maker" />
+	<meta name="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
+	<meta name="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@thomas_mol" />
+	<meta name="twitter:creator" content="@thomas_mol" />
+	<meta name="twitter:title" content="Thomas Mol | App Maker" />
+	<meta
+		name="twitter:description"
+		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
+	<meta name="twitter:image" content="https://thomasmol.com/images/thomasmol.webp" />
+	<meta name="twitter:image:alt" content="Thomas Mol" />
+	<meta name="linkedin:site" content="https://www.linkedin.com/in/thomas-mol/" />
+	<meta name="linkedin:creator" content="https://www.linkedin.com/in/thomas-mol/" />
+	<meta name="linkedin:title" content="Thomas Mol | App Maker" />
+	<meta
+		name="linkedin:description"
+		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
+	<meta name="linkedin:image" content="https://thomasmol.com/images/thomasmol.webp" />
+	<meta name="linkedin:image:alt" content="Thomas Mol" />
 </svelte:head>
 
 <main class="">
-	<section id="hero" class="max-h-screen overflow-hidden bg-stone-900 backdrop-blur-0">
+	<section id="hero" class="relative max-h-screen overflow-hidden bg-stone-900 backdrop-blur-0">
 		<img
-			src="/images/dalle-laptop.webp"
-			alt=""
+			src="/images/smartphone.webp"
+			alt="A robot holding a smartphone"
 			height="100%"
 			width="100%"
-			class="absolute -z-50 blur-lg brightness-[0.4]" />
+			class="absolute -z-50 h-full w-full overflow-hidden object-cover blur-lg brightness-[0.5]" />
 		<div class="container space-y-4 pt-10 text-center  md:pt-20">
 			<img
-				src="/images/about.webp"
+				src="/images/thomasmol.webp"
 				alt="Thomas Mol"
-				width="4rem"
-				height="4rem"
-				class="h-auto mx-auto w-24 bg-stone-200 shadow-xl shadow-stone-800 first:rounded-full" />
+				width="5rem"
+				height="5rem"
+				class="mx-auto h-auto w-24 bg-stone-200 shadow-xl shadow-stone-800 first:rounded-full" />
 			<h1 class="text-3xl font-bold text-stone-100">Thomas Mol</h1>
-			<h2 class="text-xl font-bold text-stone-200">Web & App Developer uit Utrecht 📍</h2>
-			<p class="text-lg text-stone-300">
-				Bezig met het creëren van een gezondere werkvloer met <a
-					href="https://bizzfit.app"
-					target="_blank"
-					rel="noreferrer"
-					class="inline-flex items-center gap-1 font-semibold text-amber-500 hover:text-amber-600"
-					>bizzfit <ExternalLink /></a
-				>,<br /> werkzaam als freelance web/app ontwikkelaar,<br /> en de master Business Informatics
-				aan de UU aan het afronden.
-			</p>
+			<h2 class="text-xl font-bold text-stone-200">App Builder from Utrecht, The Netherlands 📍</h2>
+			<p class="text-lg text-stone-300" />
 			<div class="inline-flex justify-center gap-6 py-2 md:pb-10">
 				<a
 					href="https://linkedin.com/in/thomas-mol"
@@ -65,92 +82,53 @@
 					<Twitter />
 				</a>
 			</div>
-			<div class="flex gap-6 justify-center">
-				<a href="#services" class="rounded bg-white py-1 px-4">Services</a>
-				<a href="#portfolio" class="rounded bg-white py-1 px-4">Projecten</a>
-			</div>
-			<a href="#services" class="inline-flex text-center pb-8 text-4xl text-stone-200 hover:text-stone-50"
-				><ArrowDown /></a>
-		</div>
-	</section>
-
-	<section id="services" class="my-12 md:my-24">
-		<div class="container">
-			<header class="space-y-2 py-20 text-center">
-				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
-					Wat ik voor jou kan doen
-				</h1>
-			</header>
-
-			<div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16 lg:gap-32">
-				<div>
-					<div class="overflow-hidden">
-						<img
-							src="/images/dalle-laptop.webp"
-							alt="laptop"
-							class="h-56 w-full rounded-2xl object-cover object-bottom" />
-					</div>
-					<h2 class="mt-6 text-xl font-semibold text-stone-800 dark:text-stone-100">💻 Websites</h2>
-					<p class="mt-2 text-lg text-stone-700  dark:text-stone-300">
-						Ik maak websites op maat, met CMS zodat jij makkelijk nieuwe content kan uploaden en
-						aanpassen. Ik kan je helpen met het ontwerp, de hosting en het onderhoud.
-					</p>
-				</div>
-				<div>
-					<div class="overflow-hidden">
-						<img
-							src="/images/dalle-smartphone.webp"
-							alt="laptop"
-							class="h-56 w-full rounded-2xl object-cover object-center" />
-					</div>
-					<h2 class="mt-6 text-xl font-semibold text-stone-800 dark:text-stone-100">📱 Apps</h2>
-					<p class="mt-4 text-lg text-stone-700  dark:text-stone-300">
-						Webapp of smartphone app nodig? Ik maak ze voor je, met een mooie interface en een goede
-						gebruikerservaring.
-					</p>
-				</div>
+			<div>
+				<a
+					href="#projects"
+					class="inline-flex pb-8 text-center text-4xl text-stone-200 hover:text-stone-50"
+					><ArrowDown /></a>
 			</div>
 		</div>
 	</section>
 
-	<section id="portfolio" class="my-16 md:my-32">
-		<div class="container">
-			<header class="space-y-4 py-20 text-center">
+	<section id="projects" class="my-12 ">
+		<div class="mx-auto max-w-3xl">
+			<header class="space-y-4 py-10 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
-					Waar ben ik mee bezig
+					What I've been working on
 				</h1>
-				<p>
-					<a
-						href="projects"
-						class="mt-3 text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
-						>Alle projecten &RightArrow;</a>
-				</p>
 			</header>
-			<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<div class="flex flex-col gap-10">
 				{#each data.projects as project}
 					<ProjectCard {project} />
 				{/each}
 			</div>
+			<div class="text-center py-10">
+				<a
+					href="projects"
+					class="text-xl text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
+					>View more projects &RightArrow;</a>
+			</div>
 		</div>
 	</section>
 
-	<section id="contact" class="my-16 md:my-32">
-		<div class="container">
+	<section id="contact" class="my-16 md:my-24">
+		<div class="container max-w-2xl ">
 			<header class="space-y-2 py-10 text-center">
 				<h1 class="text-3xl font-bold text-stone-800 dark:text-stone-100">
-					Samenwerken?
+					Want to work together?
 				</h1>
 			</header>
 			<div class="text-center">
 				<h2 class="mb-4 text-xl text-stone-800 dark:text-stone-100">
-					Stuur me een berichtje via <a
+					Send me a message through <a
 						href="http://linkedin.com/in/thomas-mol"
 						target="_blank"
 						class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
 						rel="noopener noreferrer"
 						>LinkedIn <ExternalLink />
 					</a>
-					of
+					or
 					<a
 						href="http://twitter.com/thomas_mol"
 						target="_blank"
@@ -160,7 +138,7 @@
 					</a>!
 				</h2>
 				<h3 class="py-4 text-xl  text-stone-800 dark:text-stone-100">
-					Of plan gelijk een meeting via <a
+					Or plan a meeting at <a
 						href="https://cal.com/thomasmol/30min"
 						target="_blank"
 						class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
