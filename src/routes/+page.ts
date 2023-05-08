@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-
+export const prerender = true;
 export const load = (async () => {
 	const allProjectFiles = import.meta.glob<any>('../lib/projects/*.md');
 	const iterableProjectFiles = Object.entries(allProjectFiles);

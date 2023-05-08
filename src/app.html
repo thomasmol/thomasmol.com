@@ -4,6 +4,9 @@
 		<meta charset="utf-8" />
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+		<meta name="author" content="Thomas Mol" />
 		<link rel="apple-touch-icon" sizes="57x57" href="%sveltekit.assets%/images/favicons/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="%sveltekit.assets%/images/favicons/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="%sveltekit.assets%/images/favicons/apple-icon-72x72.png" />
@@ -19,9 +22,6 @@
 		<link rel="manifest" href="%sveltekit.assets%/images/favicons/manifest.json" />
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="msapplication-TileImage" content="%sveltekit.assets%/images/favicons/ms-icon-144x144.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="author" content="Thomas Mol" />
-		%sveltekit.head%
 	</head>
 	<body class="overflow-y-scroll bg-stone-50 antialiased dark:bg-stone-900">
 		<div class="flex h-screen flex-col justify-between">%sveltekit.body%</div>

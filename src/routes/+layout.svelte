@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import '../app.css';
-	
+
 </script>
 <svelte:head>
 	<script defer data-domain="thomasmol.com" src="https://plausible.io/js/script.js"></script>

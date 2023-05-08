@@ -9,6 +9,8 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	
 </script>
 
 <svelte:head>
@@ -41,7 +43,7 @@
 	<meta name="linkedin:image:alt" content="Thomas Mol" />
 </svelte:head>
 
-<main class="">
+<main class="flex-grow">
 	<section id="hero" class="relative max-h-screen overflow-hidden bg-stone-900 backdrop-blur-0">
 		<img
 			src="/images/smartphone.webp"
