@@ -14,11 +14,11 @@
 		name="description"
 		content="View a list of my all my projects." />
 	<meta
-		name="og:description"
+		property="og:description"
 		content="View a list of my all my projects." />
-	<meta name="og:title" content="Thomas Mol | All Projects" />
-	<meta name="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
-	<meta name="og:type" content="website" />
+	<meta property="og:title" content="Thomas Mol | All Projects" />
+	<meta property="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@thomas_mol" />
 	<meta name="twitter:creator" content="@thomas_mol" />

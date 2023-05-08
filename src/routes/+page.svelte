@@ -17,11 +17,11 @@
 		name="description"
 		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
 	<meta
-		name="og:description"
+		property="og:description"
 		content="I build useful apps. Currently working on AI tools and finishing my master's degree." />
-	<meta name="og:title" content="Thomas Mol | App Maker" />
-	<meta name="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
-	<meta name="og:type" content="website" />
+	<meta property="og:title" content="Thomas Mol | App Maker" />
+	<meta property="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@thomas_mol" />
 	<meta name="twitter:creator" content="@thomas_mol" />

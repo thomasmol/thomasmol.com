@@ -16,11 +16,11 @@
 		name="description"
 		content="{data.excerpt}" />
 	<meta
-		name="og:description"
+		property="og:description"
 		content="{data.excerpt}" />
-	<meta name="og:title" content="Thomas Mol | {data.title}" />
-	<meta name="og:image" content="https://thomasmol.com{data.thumbnail}" />
-	<meta name="og:type" content="website" />
+	<meta property="og:title" content="Thomas Mol | {data.title}" />
+	<meta property="og:image" content="https://thomasmol.com{data.thumbnail}" />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@thomas_mol" />
 	<meta name="twitter:creator" content="@thomas_mol" />
