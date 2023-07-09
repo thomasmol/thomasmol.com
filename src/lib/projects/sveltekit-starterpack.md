@@ -2,27 +2,31 @@
 title: SvelteKit Starterpack CLI tool
 date: 2023-02-27T10:00:00.000Z
 last_edited: 2023-02-19T10:00:00.000Z
+logo: /uploads/projects/sveltekitcli_logo.png
 thumbnail: /uploads/projects/sveltekitstarterpack.png
 layout: project
 excerpt: Een CLI tool om snel een SvelteKit project te starten.
 wordcount: 0
 readtime: 0
 author: Thomas Mol
-tags: ["SvelteKit", "NPM", "CLI"]
+tags: ['SvelteKit', 'NPM', 'CLI']
 ---
 
-### Wat is SvelteKit Starterpack
-Met deze CLI tool kun je makkelijk snel productie ready apps opzetten met SvelteKit. De tool is beschikbaar op [NPM](https://www.npmjs.com/package/create-sveltekit-starterpack) en kan gebruikt worden om snel een SvelteKit project op te zetten met een aantal standaard packages. Voor nu heb je de optie om TailwindCSS toe te voegen als styling framework, en de optie om een project met de OpenAI API op te zetten om snel een ai project te starten.
+### What is SvelteKit Starterpack?
 
-### Waarom?
-Ik merkte dat ik makkelijker snel projecten wil starten en gebruik wil maken van standaard packages. Daarom heb ik deze CLI tool gemaakt om snel een SvelteKit project op te zetten met een aantal standaard packages en opties om extra packages toe te voegen.
+The SvelteKit Starterpack is a CLI tool that allows you to easily and quickly set up production-ready apps with SvelteKit. The tool is available on [NPM](https://www.npmjs.com/package/create-sveltekit-starterpack) and can be used to set up a SvelteKit project quickly with a number of standard packages. Currently, you have the option to add TailwindCSS as a styling framework and the option to set up a project with the OpenAI API to quickly start an AI project.
 
+### Why?
 
-### Wat heb ik gedaan
-  - De CLI tool ontworpen en gebouwd (met Prompter)
-  - De tool beschikbaar gemaakt op NPM
+I noticed that I wanted to start projects more easily and make use of standard packages. Therefore, I created this CLI tool to quickly set up a SvelteKit project with a number of standard packages and options to add extra packages.
 
-Open een terminal en voer het volgende commando uit om de tool te gebruiken:
-  ```bash
-   npm create sveltekit-starterpack@latest my-project
-   ```
+### What I did
+
+- Designed and built the CLI tool (with Prompter)
+- Made the tool available on NPM
+
+Open a terminal and execute the following command to use the tool:
+
+```bash
+ npx create-sveltekit-starterpack@latest my-project
+```
