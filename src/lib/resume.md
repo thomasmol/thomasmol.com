@@ -4,7 +4,6 @@
 - 🕰️ July 11, 2023 11:47 AM
 - 📍 Utrecht, The Netherlands
 - 📧  email@thomasmol.com
-- 📞 +31 6 11068087
 
 
 <aside>
@@ -88,4 +87,3 @@ I am passionate about creating new solutions from scratch. I enjoy solving compl
 - [Github](https://github.com/thomasmol) - [https://github.com/thomasmol](https://github.com/thomasmol)
 - [Personal website](https://thomasmol.com/) - [https://thomasmol.com](https://thomasmol.com)
 - Email:  email@thomasmol.com
-- Phone: +31 6 11068087

@@ -9,24 +9,24 @@
 </script>
 
 <svelte:head>
-	<title>Thomas Mol | {data.title}</title>
-	<meta name="description" content={data.excerpt} />
-	<meta property="og:description" content={data.excerpt} />
-	<meta property="og:title" content="Thomas Mol | {data.title}" />
-	<meta property="og:image" content="https://thomasmol.com{data.thumbnail}" />
+	<title>Thomas Mol | Resume</title>
+	<meta name="description" content="Resume of Thomas Mol" />
+	<meta property="og:description" content="Resume of Thomas Mol" />
+	<meta property="og:title" content="Thomas Mol | Resume" />
+	<meta property="og:image" content="https://thomasmol.com/images/thomasmol.webp" />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@thomas_mol" />
 	<meta name="twitter:creator" content="@thomas_mol" />
-	<meta name="twitter:title" content="Thomas Mol | {data.title}" />
-	<meta name="twitter:description" content={data.excerpt} />
-	<meta name="twitter:image" content="https://thomasmol.com{data.thumbnail}" />
+	<meta name="twitter:title" content="Thomas Mol | Resume" />
+	<meta name="twitter:description" content="Resume of Thomas Mol" />
+	<meta name="twitter:image" content="https://thomasmol.com/images/thomasmol.webp" />
 	<meta name="twitter:image:alt" content="Thomas Mol" />
 	<meta name="linkedin:site" content="https://www.linkedin.com/in/thomas-mol/" />
 	<meta name="linkedin:creator" content="https://www.linkedin.com/in/thomas-mol/" />
-	<meta name="linkedin:title" content="Thomas Mol | {data.title}" />
-	<meta name="linkedin:description" content={data.excerpt} />
-	<meta name="linkedin:image" content="https://thomasmol.com{data.thumbnail}" />
+	<meta name="linkedin:title" content="Thomas Mol | Resume" />
+	<meta name="linkedin:description" content="Resume of Thomas Mol" />
+	<meta name="linkedin:image" content="https://thomasmol.com/images/thomasmol.webp" />
 	<meta name="linkedin:image:alt" content="Thomas Mol" />
 </svelte:head>
 <NavigationBar />
