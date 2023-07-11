@@ -46,6 +46,11 @@ export async function GET() {
         <lastmod>2023-07-07T07:31:19+00:00</lastmod>
         <priority>0.90</priority>
     </url>
+    <url>
+        <loc>https://thomasmol.com/resume</loc>
+        <lastmod>2023-07-07T07:31:19+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
       ${projectUrls}
       </urlset>`.trim(),
 		{

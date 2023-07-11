@@ -79,6 +79,9 @@
 						class="text-2xl text-stone-600 hover:text-stone-500 dark:text-stone-200">
 						<Twitter />
 					</a>
+					<a href="/resume" class="font-semibold hover:underline text-stone-600 hover:text-stone-500 dark:text-stone-200">
+						Resume
+					</a>
 				</div>
 			</div>
 		</div>
