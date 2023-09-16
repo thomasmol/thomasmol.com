@@ -1,7 +1,7 @@
 ![me.webp](/images/thomasmol.webp)
 # CV Thomas Mol
 
-- 🕰️ July 11, 2023 11:47 AM
+- 🕰️ September 16, 2023 11:47 AM
 - 📍 Utrecht, The Netherlands
 - 📧  email@thomasmol.com
 
@@ -29,7 +29,7 @@ Utrecht University
 
 ### Master’s Degree in Business Informatics (Entrepreneurship profile)
 
-*2020 - 2023 (graduating in August 2023)*
+*2020 - 2023*
 
 Utrecht University
 
@@ -72,7 +72,7 @@ Utrecht University
 
 ### Full stack software development
 
-I am most experienced in building websites and webapps using **SvelteKit**, **Typescript**, and **Postgres** which I have been using for the past 3 years. I’ve also used **Python** for data analysis and ML. I’ve also built mobile apps for iOS and Android using **Flutter** (cross-platform app framework) and **Supabase** (Backend-as-a-Service). 
+I am most experienced in building websites and webapps using **SvelteKit**, **Typescript**, and **Postgres** which I have been using for the past 3 years. I’ve also used **Python** for data analysis and ML/AI. I’ve also built mobile apps for iOS and Android using **Flutter** (cross-platform app framework) and **Supabase** (Backend-as-a-Service). 
 
 ### Entrepreneurship / Indie hacking
 
