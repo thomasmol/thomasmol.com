@@ -14,4 +14,4 @@ tags: ['SvelteKit', 'SaaS', 'Boilerplate']
 
 ### Overview
 
-**Launch Leopard** is a boilerplate for SaaS applications. It incorporates a robust technology stack that ensures high performance, security, and reliability. The boilerplate is available at [launchleopard.com](https://launchleopard.com).
+**Launch Leopard** is a boilerplate for SaaS applications. It incorporates a robust technology stack for authentication, database orm, payments, styling and email. With more components to come! Check it at [launchleopard.com](https://launchleopard.com).
