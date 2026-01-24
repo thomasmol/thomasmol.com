@@ -1,38 +1,95 @@
-# create-svelte
+# Thomas Mol | Portfolio Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Personal portfolio website for Thomas Mol, an app maker from Utrecht, The Netherlands.
 
-## Creating a project
+## About
 
-If you're seeing this, you've probably already done this step. Congrats!
+This is my personal website showcasing my projects, blog posts, and professional experience. The site is built with modern web technologies to provide a fast, responsive, and accessible user experience.
+
+## Tech Stack
+
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) - Full-stack web framework
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Content**: [MDsveX](https://mdsvex.pngwn.io/) - Markdown in Svelte
+- **Deployment**: Static site hosting
+- **Analytics**: Plausible
+
+## Features
+
+- 📱 Fully responsive design
+- 🌙 Dark/light theme support
+- ⚡ Optimized performance
+- 📝 Blog with Markdown support
+- 🚀 Project showcase
+- 📄 Resume page
+- 🔍 SEO optimized
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Run the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open [http://localhost:5173](http://localhost:5173) to view the site.
 
-To create a production version of your app:
+## Available Scripts
 
-```bash
-npm run build
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run test` - Run Playwright tests
+- `npm run check` - Run Svelte checks
+- `npm run lint` - Run linting
+- `npm run format` - Format code with Prettier
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── components/     # Reusable Svelte components
+│   ├── projects/       # Project markdown files
+│   ├── posts/          # Blog post markdown files
+│   └── icons/          # Icon components
+├── routes/             # SvelteKit pages
+└── app.html            # Main HTML template
+static/
+├── images/             # Static images
+└── uploads/            # Uploaded assets
 ```
 
-You can preview the production build with `npm run preview`.
+## Adding Content
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### New Projects
+
+Create a new markdown file in `src/lib/projects/` with frontmatter:
+
+```yaml
+---
+title: Project Name
+date: 2023-01-01T00:00:00.000Z
+last_edited: 2023-01-01T00:00:00.000Z
+logo: /path/to/logo.png
+thumbnail: /path/to/thumbnail.png
+layout: project
+excerpt: Brief project description
+author: Thomas Mol
+tags: ['tag1', 'tag2']
+---
+```
+
+### New Blog Posts
+
+Create a new markdown file in `src/lib/posts/` with similar frontmatter structure.
+
+## License
+
+MIT License - feel free to use this as inspiration for your own portfolio!
