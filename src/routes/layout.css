@@ -1,1 +1,136 @@
 @import 'tailwindcss';
+
+:root {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: #1f1d1a;
+	background: #fdfbf7;
+	font-synthesis: none;
+}
+
+html {
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	box-sizing: content-box;
+	max-width: 670px;
+	margin: 0 auto;
+	padding: clamp(4rem, 12vw, 8rem) clamp(1.25rem, 5vw, 2rem) 3rem;
+}
+
+header,
+section {
+	margin-bottom: 3.5rem;
+}
+
+h1,
+h2 {
+	line-height: 1.2;
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: -0.025em;
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+
+.profile img {
+	display: block;
+	width: 80px;
+	height: 80px;
+	flex: none;
+	border-radius: 50%;
+	object-fit: cover;
+	outline: 1px solid #d8d1c7;
+	outline-offset: 2px;
+}
+
+h2 {
+	margin: 0 0 0.75rem;
+	font-size: 1.25rem;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding-left: 1.25rem;
+	list-style: disc;
+}
+
+li + li {
+	margin-top: 0.75rem;
+}
+
+a {
+	color: #0645ad;
+	text-decoration: underline;
+	text-decoration-thickness: 0.06em;
+	text-underline-offset: 0.14em;
+}
+
+a:visited {
+	color: #5a3696;
+}
+
+a:focus-visible {
+	outline: 3px solid currentColor;
+	outline-offset: 3px;
+	border-radius: 1px;
+}
+
+footer {
+	padding-top: 1.5rem;
+	border-top: 1px solid #d8d1c7;
+	font-size: 0.95rem;
+}
+
+@media (min-width: 600px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	.profile img {
+		width: 96px;
+		height: 96px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color: #eee9e1;
+		background: #151412;
+	}
+
+	a {
+		color: #80b7ff;
+	}
+
+	a:visited {
+		color: #c3a6f7;
+	}
+
+	footer {
+		border-color: #49453f;
+	}
+
+	.profile img {
+		outline-color: #49453f;
+	}
+}
