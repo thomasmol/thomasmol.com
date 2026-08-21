@@ -2,13 +2,13 @@
 	<title>Thomas Mol - Founding Engineer at pyannoteAI</title>
 	<meta
 		name="description"
-		content="Thomas Mol builds AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
+		content="I build AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
 	/>
 	<link rel="canonical" href="https://thomasmol.com/" />
-	<meta property="og:title" content="Thomas Mol - Founding Engineer at pyannoteAI" />
+	<meta property="og:title" content="Thomas Mol - Founding Engineer" />
 	<meta
 		property="og:description"
-		content="Thomas Mol builds AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
+		content="I build AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://thomasmol.com/" />
@@ -19,7 +19,7 @@
 	class="isolate min-h-dvh bg-olive-50 font-serif text-lg/7 text-olive-900 antialiased dark:bg-olive-950 dark:text-olive-100"
 >
 	<div
-		class="mx-auto box-content max-w-2xl px-[clamp(1.25rem,5vw,2rem)] pt-[clamp(4rem,12vw,8rem)] pb-12"
+		class="mx-auto max-w-2xl px-5 pt-16 pb-12 sm:px-8 sm:pt-24 lg:pt-32"
 	>
 	<header class="mb-14">
 		<div class="mb-4 flex flex-col items-start gap-3">
@@ -30,26 +30,26 @@
 				width="400"
 				height="400"
 			/>
-			<h1 class="text-2xl leading-[1.2] font-semibold tracking-tight sm:text-[1.75rem]">
+			<h1 class="text-2xl/7 font-semibold tracking-tight">
 				Thomas Mol
 			</h1>
 		</div>
 		<p>
 			Founding Engineer at <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://www.pyannote.ai/"
 				target="_blank"
 				rel="noopener noreferrer">pyannoteAI</a
 			> in Utrecht, the
-			Netherlands. I build AI-based tools and products and care about performance and great UI/UX.
+			Netherlands. I build tools and products and care about performance and great UI/UX.
 		</p>
 	</header>
 
 	<section class="mb-14" aria-labelledby="what-i-do">
-		<h2 class="mb-3 text-xl leading-[1.2] font-semibold" id="what-i-do">What I do</h2>
+		<h2 class="mb-3 text-xl/6 font-semibold" id="what-i-do">What I do</h2>
 		<p>
 			At <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://www.pyannote.ai/"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -57,7 +57,7 @@
 			>, I work on the platform for speaker
 			diarization and conversation intelligence. I also founded
 			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://audiogest.app/"
 				target="_blank"
 				rel="noopener noreferrer">Audiogest</a
@@ -68,18 +68,18 @@
 	</section>
 
 	<section class="mb-14" aria-labelledby="selected-work">
-		<h2 class="mb-3 text-xl leading-[1.2] font-semibold" id="selected-work">Selected work</h2>
+		<h2 class="mb-3 text-xl/6 font-semibold" id="selected-work">Selected work</h2>
 		<ul class="list-disc space-y-3 pl-5">
 			<li>
 				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 					href="https://github.com/thomasmol/cog-whisper-diarization"
 					target="_blank"
 					rel="noopener noreferrer">Whisper Diarization</a
 				>: A
 				transcription and speaker diarization pipeline using Whisper and pyannote. 8.9M+ runs on
 				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 					href="https://replicate.com/thomasmol/whisper-diarization"
 					target="_blank"
 					rel="noopener noreferrer">Replicate</a
@@ -87,7 +87,7 @@
 			</li>
 			<li>
 				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 					href="https://audiogest.app/"
 					target="_blank"
 					rel="noopener noreferrer">Audiogest</a
@@ -101,20 +101,20 @@
 	<footer class="border-t border-olive-300 pt-6 text-base/7 dark:border-olive-700">
 		<p>
 			Find me on <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://github.com/thomasmol"
 				target="_blank"
 				rel="noopener noreferrer"
 				>GitHub</a
 			>,
 			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://www.linkedin.com/in/thomas-mol"
 				target="_blank"
 				rel="noopener noreferrer">LinkedIn</a
 			>, and
 			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 visited:text-violet-700 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300 dark:visited:text-violet-300"
+				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://x.com/thomas_mol"
 				target="_blank"
 				rel="noopener noreferrer">X</a
