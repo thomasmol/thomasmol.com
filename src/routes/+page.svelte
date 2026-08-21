@@ -1,14 +1,14 @@
 <svelte:head>
-	<title>Thomas Mol - Founding Engineer at pyannoteAI</title>
+	<title>Thomas Mol - Founding Engineer</title>
 	<meta
 		name="description"
-		content="I build AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
+		content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX."
 	/>
 	<link rel="canonical" href="https://thomasmol.com/" />
 	<meta property="og:title" content="Thomas Mol - Founding Engineer" />
 	<meta
 		property="og:description"
-		content="I build AI-based tools and products as a Founding Engineer on pyannoteAI's speaker diarization and conversation intelligence platform."
+		content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://thomasmol.com/" />
