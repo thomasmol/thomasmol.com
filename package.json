@@ -1,46 +1,36 @@
 {
-	"name": "portfolio-website",
-	"version": "1.0.0",
-	"private": false,
+	"name": "thomasmol.com",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	},
 	"scripts": {
-		"dev": "vite dev --host",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "playwright test",
+		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "oxfmt .",
+		"lint": "oxlint ."
+	},
+	"dependencies": {
+		"oxfmt": "^0.64.0",
+		"oxlint": "^1.79.0"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.25.0",
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^2.0.2",
-		"@sveltejs/kit": "^1.7.1",
-		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/forms": "^0.5.3",
-		"@tailwindcss/typography": "^0.5.7",
-		"@typescript-eslint/eslint-plugin": "^5.27.0",
-		"@typescript-eslint/parser": "^5.27.0",
-		"autoprefixer": "^10.4.8",
-		"eslint": "^8.16.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"mdsvex": "^0.10.6",
-		"postcss": "^8.4.16",
-		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0",
-		"prettier-plugin-tailwindcss": "^0.1.13",
-		"svelte": "^3.52.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.7",
-		"tailwindcss": "^3.1.8",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.4",
-		"vite": "^4.0.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"timeago.js": "^4.0.2"
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tailwindcss/vite": "^4.3.0",
+		"mdsvex": "^0.12.7",
+		"svelte": "^5.56.1",
+		"svelte-check": "^4.6.0",
+		"tailwindcss": "^4.3.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16"
 	}
 }
