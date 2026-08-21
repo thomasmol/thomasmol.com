@@ -35,13 +35,13 @@
 			</h1>
 		</div>
 		<p>
-			Founding Engineer at <a
+			I am currently a Founding Engineer at <a
 				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
 				href="https://www.pyannote.ai/"
 				target="_blank"
 				rel="noopener noreferrer">pyannoteAI</a
-			> in Utrecht, the
-			Netherlands. I build tools and products and care about performance and great UI/UX.
+			>, based in Utrecht, the
+			Netherlands.
 		</p>
 	</header>
 
@@ -61,8 +61,7 @@
 				href="https://audiogest.app/"
 				target="_blank"
 				rel="noopener noreferrer">Audiogest</a
-			>, a web app for accurate audio transcription
-			and summaries. Beyond speech, I like building AI-based tools and products, with a focus on
+			>, a web app for transforming meetings and interviews into transcripts and summaries. Beyond speech, I like building AI-based tools and products, with a focus on
 			performant applications and great UI/UX.
 		</p>
 	</section>
@@ -92,8 +91,7 @@
 					target="_blank"
 					rel="noopener noreferrer">Audiogest</a
 				>:
-				Accurate transcripts and concise
-				summaries from audio.
+				A tool for transforming meetings and interviews into transcripts, summaries and other deliverables.
 			</li>
 		</ul>
 	</section>
