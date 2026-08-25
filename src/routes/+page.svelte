@@ -1,123 +1,84 @@
+<script lang="ts">
+	import { setContext } from 'svelte';
+	import { isHttpError } from '@sveltejs/kit';
+	import { KeyMapper, Session, Svedit, define_keymap, type Document } from 'svedit';
+	import { getHomeContent, saveHomeContent } from '#lib/content.remote.js';
+	import { portfolioConfig } from '#lib/editor/config.js';
+	import { portfolioSchema } from '#lib/editor/schema.js';
+
+	const data = await getHomeContent();
+	let savedDocument = $state<Document>(data.document);
+	let revision = $state(data.revision);
+	let session = $state(new Session(portfolioSchema, data.document, portfolioConfig));
+	let editable = $state(false);
+	let saving = $state(false);
+	let saveError = $state('');
+
+	const keyMapper = new KeyMapper();
+	const appKeymap = define_keymap({
+		'meta+e,ctrl+e': [{ is_enabled: () => data.isAdmin, execute: toggleEdit }],
+		'meta+s,ctrl+s': [{ is_enabled: () => editable && !saving, execute: save }]
+	});
+	keyMapper.push_scope(appKeymap);
+	setContext('key_mapper', keyMapper);
+
+	function toggleEdit() {
+		editable = !editable;
+		saveError = '';
+	}
+
+	function cancel() {
+		session = new Session(portfolioSchema, savedDocument, portfolioConfig);
+		editable = false;
+		saveError = '';
+	}
+
+	async function save() {
+		if (saving) return;
+		saving = true;
+		saveError = '';
+
+		try {
+			const result = await saveHomeContent({ data: session.to_json(), revision });
+			revision = result.revision;
+			savedDocument = session.to_json();
+			editable = false;
+		} catch (error) {
+			if (isHttpError(error, 409)) {
+				saveError = 'This page changed. Reload it before you save.';
+				return;
+			}
+
+			saveError = 'Save failed. Check your connection.';
+		} finally {
+			saving = false;
+		}
+	}
+</script>
+
 <svelte:head>
 	<title>Thomas Mol - Founding Engineer</title>
-	<meta
-		name="description"
-		content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX."
-	/>
+	<meta name="description" content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX." />
 	<link rel="canonical" href="https://thomasmol.com/" />
 	<meta property="og:title" content="Thomas Mol - Founding Engineer" />
-	<meta
-		property="og:description"
-		content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX."
-	/>
+	<meta property="og:description" content="I am a founding engineer who builds AI products and performant applications with thoughtful UI/UX." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://thomasmol.com/" />
 	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
-<main
-	class="isolate min-h-dvh bg-olive-50 font-serif text-lg/7 text-olive-900 antialiased dark:bg-olive-950 dark:text-olive-100"
->
-	<div
-		class="mx-auto max-w-2xl px-5 pt-16 pb-12 sm:px-8 sm:pt-24 lg:pt-32"
-	>
-	<header class="mb-14">
-		<div class="mb-4 flex flex-col items-start gap-3">
-			<img
-				class="size-20 shrink-0 rounded-full object-cover outline-1 outline-offset-2 outline-olive-300 sm:size-24 dark:outline-olive-700"
-				src="/thomas.webp"
-				alt=""
-				width="400"
-				height="400"
-			/>
-			<h1 class="text-2xl/7 font-semibold tracking-tight">
-				Thomas Mol
-			</h1>
+<svelte:window onkeydown={(event) => keyMapper.handle_keydown(event)} />
+
+<Svedit {session} path={[session.doc.document_id]} bind:editable />
+
+{#if data.isAdmin}
+	{#if editable}
+		<div class="fixed right-4 bottom-4 left-4 z-50 flex items-center justify-end gap-2 rounded-xl border border-olive-300 bg-olive-50/95 p-3 font-serif text-sm text-olive-900 shadow-lg backdrop-blur sm:left-auto dark:border-olive-700 dark:bg-olive-950/95 dark:text-olive-100">
+			{#if saveError}<p class="mr-auto max-w-xs text-red-700 dark:text-red-300">{saveError}</p>{/if}
+			<button type="button" onclick={cancel} class="rounded-lg border border-olive-300 px-4 py-2 hover:bg-olive-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:border-olive-700 dark:hover:bg-olive-900">Cancel</button>
+			<button type="button" onclick={save} disabled={saving} class="rounded-lg bg-olive-900 px-4 py-2 text-olive-50 hover:bg-olive-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current disabled:opacity-50 dark:bg-olive-100 dark:text-olive-950 dark:hover:bg-white">{saving ? 'Saving...' : 'Save'}</button>
 		</div>
-		<p>
-			I am currently a Founding Engineer at <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://www.pyannote.ai/"
-				target="_blank"
-				rel="noopener noreferrer">pyannoteAI</a
-			>, based in Utrecht, the
-			Netherlands.
-		</p>
-	</header>
-
-	<section class="mb-14" aria-labelledby="what-i-do">
-		<h2 class="mb-3 text-xl/6 font-semibold" id="what-i-do">What I do</h2>
-		<p>
-			At <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://www.pyannote.ai/"
-				target="_blank"
-				rel="noopener noreferrer"
-				>pyannoteAI</a
-			>, I work on the platform for speaker
-			diarization and conversation intelligence. I also founded
-			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://audiogest.app/"
-				target="_blank"
-				rel="noopener noreferrer">Audiogest</a
-			>, a web app for transforming meetings and interviews into transcripts and summaries. Beyond speech, I like building AI-based tools and products, with a focus on
-			performant applications and great UI/UX.
-		</p>
-	</section>
-
-	<section class="mb-14" aria-labelledby="selected-work">
-		<h2 class="mb-3 text-xl/6 font-semibold" id="selected-work">Selected work</h2>
-		<ul class="list-disc space-y-3 pl-5">
-			<li>
-				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-					href="https://github.com/thomasmol/cog-whisper-diarization"
-					target="_blank"
-					rel="noopener noreferrer">Whisper Diarization</a
-				>: A
-				transcription and speaker diarization pipeline using Whisper and pyannote. 8.9M+ runs on
-				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-					href="https://replicate.com/thomasmol/whisper-diarization"
-					target="_blank"
-					rel="noopener noreferrer">Replicate</a
-				>.
-			</li>
-			<li>
-				<a
-					class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-					href="https://audiogest.app/"
-					target="_blank"
-					rel="noopener noreferrer">Audiogest</a
-				>:
-				A tool for transforming meetings and interviews into transcripts, summaries and other deliverables.
-			</li>
-		</ul>
-	</section>
-
-	<footer class="border-t border-olive-300 pt-6 text-base/7 dark:border-olive-700">
-		<p>
-			Find me on <a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://github.com/thomasmol"
-				target="_blank"
-				rel="noopener noreferrer"
-				>GitHub</a
-			>,
-			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://www.linkedin.com/in/thomas-mol"
-				target="_blank"
-				rel="noopener noreferrer">LinkedIn</a
-			>, and
-			<a
-				class="text-blue-700 underline decoration-1 underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-blue-300"
-				href="https://x.com/thomas_mol"
-				target="_blank"
-				rel="noopener noreferrer">X</a
-			>.
-		</p>
-	</footer>
-	</div>
-</main>
+	{:else}
+		<button type="button" onclick={toggleEdit} class="fixed right-4 bottom-4 z-50 rounded-full border border-olive-300 bg-olive-50/95 px-4 py-2 font-serif text-sm text-olive-900 shadow-lg backdrop-blur hover:bg-olive-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:border-olive-700 dark:bg-olive-950/95 dark:text-olive-100 dark:hover:bg-olive-900">Edit</button>
+	{/if}
+{/if}
