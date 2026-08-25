@@ -1,7 +1,7 @@
 {
 	"version": "8",
 	"dialect": "postgres",
-	"id": "2bc9178a-cac7-4df9-8cef-b17672b06147",
+	"id": "0d816223-4ed8-4c03-8b01-985f88bd3b3a",
 	"prevIds": ["00000000-0000-0000-0000-000000000000"],
 	"ddl": [
 		{
@@ -763,19 +763,6 @@
 		{
 			"type": "text",
 			"typeSchema": null,
-			"notNull": false,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "impersonated_by",
-			"entityType": "columns",
-			"schema": "public",
-			"table": "session"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
 			"notNull": true,
 			"dimensions": 0,
 			"default": null,
@@ -951,58 +938,6 @@
 			"generated": null,
 			"identity": null,
 			"name": "updated_at",
-			"entityType": "columns",
-			"schema": "public",
-			"table": "user"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": false,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "role",
-			"entityType": "columns",
-			"schema": "public",
-			"table": "user"
-		},
-		{
-			"type": "boolean",
-			"typeSchema": null,
-			"notNull": false,
-			"dimensions": 0,
-			"default": "false",
-			"generated": null,
-			"identity": null,
-			"name": "banned",
-			"entityType": "columns",
-			"schema": "public",
-			"table": "user"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": false,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "ban_reason",
-			"entityType": "columns",
-			"schema": "public",
-			"table": "user"
-		},
-		{
-			"type": "timestamp",
-			"typeSchema": null,
-			"notNull": false,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "ban_expires",
 			"entityType": "columns",
 			"schema": "public",
 			"table": "user"

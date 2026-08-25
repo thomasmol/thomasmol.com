@@ -67,8 +67,7 @@ CREATE TABLE "session" (
 	"updated_at" timestamp NOT NULL,
 	"ip_address" text,
 	"user_agent" text,
-	"user_id" text NOT NULL,
-	"impersonated_by" text
+	"user_id" text NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "two_factor" (
@@ -89,10 +88,6 @@ CREATE TABLE "user" (
 	"image" text,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
-	"role" text,
-	"banned" boolean DEFAULT false,
-	"ban_reason" text,
-	"ban_expires" timestamp,
 	"two_factor_enabled" boolean DEFAULT false
 );
 --> statement-breakpoint

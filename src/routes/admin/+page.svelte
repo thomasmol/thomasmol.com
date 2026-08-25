@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createAuthClient } from 'better-auth/svelte';
-	import { adminClient, twoFactorClient } from 'better-auth/client/plugins';
+	import { twoFactorClient } from 'better-auth/client/plugins';
 	import { getAdminContent, uploadMedia } from '#lib/content.remote.js';
 
 	const data = await getAdminContent();
@@ -12,7 +12,6 @@
 	let message = $state('');
 	const authClient = createAuthClient({
 		plugins: [
-			adminClient(),
 			twoFactorClient({
 				onTwoFactorRedirect() {
 					needsTwoFactor = true;

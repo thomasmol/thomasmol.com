@@ -2,7 +2,7 @@ import { BETTER_AUTH_SECRET, BETTER_AUTH_URL } from '$app/env/private';
 import { getRequestEvent } from '$app/server';
 import { drizzleAdapter } from '@better-auth/drizzle-adapter/relations-v2';
 import { betterAuth } from 'better-auth';
-import { admin, twoFactor } from 'better-auth/plugins';
+import { twoFactor } from 'better-auth/plugins';
 import { sveltekitCookies } from 'better-auth/svelte-kit';
 import { db, schema } from './db/index.js';
 
@@ -15,5 +15,5 @@ export const auth = betterAuth({
 		enabled: true,
 		disableSignUp: true
 	},
-	plugins: [admin(), twoFactor({ issuer: 'thomasmol.com' }), sveltekitCookies(getRequestEvent)]
+	plugins: [twoFactor({ issuer: 'thomasmol.com' }), sveltekitCookies(getRequestEvent)]
 });
