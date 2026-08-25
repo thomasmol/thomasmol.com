@@ -1,0 +1,13 @@
+diff --git a/index.d.ts b/index.d.ts
+index 47898a6355fca8309c54daf58cd6236435e48f83..5d75fc7259c46d546544e928ef4dad023f9acf91 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -65,6 +65,8 @@ interface AdapterOptions {
+ 		| 'optimizeImports'
+ 		| 'splitting'
+ 		| 'compile'
++		| 'packages'
++		| 'external'
+ 	>;
+ }
+ 
