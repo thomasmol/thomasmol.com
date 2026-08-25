@@ -6,14 +6,6 @@
 	import { portfolioConfig } from '#lib/editor/config.js';
 	import { portfolioSchema } from '#lib/editor/schema.js';
 
-	const data = await getHomeContent();
-	let savedDocument = $state<Document>(data.document);
-	let revision = $state(data.revision);
-	let session = $state(new Session(portfolioSchema, data.document, portfolioConfig));
-	let editable = $state(false);
-	let saving = $state(false);
-	let saveError = $state('');
-
 	const keyMapper = new KeyMapper();
 	const appKeymap = define_keymap({
 		'meta+e,ctrl+e': [{ is_enabled: () => data.isAdmin, execute: toggleEdit }],
@@ -21,6 +13,14 @@
 	});
 	keyMapper.push_scope(appKeymap);
 	setContext('key_mapper', keyMapper);
+
+	const data = await getHomeContent();
+	let savedDocument = $state<Document>(data.document);
+	let revision = $state(data.revision);
+	let session = $state(new Session(portfolioSchema, data.document, portfolioConfig));
+	let editable = $state(false);
+	let saving = $state(false);
+	let saveError = $state('');
 
 	function toggleEdit() {
 		editable = !editable;

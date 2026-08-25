@@ -12,23 +12,23 @@ import {
 } from 'drizzle-orm/pg-core';
 import { z } from 'zod';
 
-export const user = pgTable(
-	'user',
-	{
-		id: text('id').primaryKey(),
-		name: text('name').notNull(),
-		email: text('email').notNull().unique(),
-		emailVerified: boolean('email_verified').default(false).notNull(),
-		image: text('image'),
-		createdAt: timestamp('created_at').defaultNow().notNull(),
-		updatedAt: timestamp('updated_at').defaultNow().$onUpdate(() => new Date()).notNull(),
-		role: text('role'),
-		banned: boolean('banned').default(false),
-		banReason: text('ban_reason'),
-		banExpires: timestamp('ban_expires'),
-		twoFactorEnabled: boolean('two_factor_enabled').default(false)
-	}
-);
+export const user = pgTable('user', {
+	id: text('id').primaryKey(),
+	name: text('name').notNull(),
+	email: text('email').notNull().unique(),
+	emailVerified: boolean('email_verified').default(false).notNull(),
+	image: text('image'),
+	createdAt: timestamp('created_at').defaultNow().notNull(),
+	updatedAt: timestamp('updated_at')
+		.defaultNow()
+		.$onUpdate(() => new Date())
+		.notNull(),
+	role: text('role'),
+	banned: boolean('banned').default(false),
+	banReason: text('ban_reason'),
+	banExpires: timestamp('ban_expires'),
+	twoFactorEnabled: boolean('two_factor_enabled').default(false)
+});
 
 export const session = pgTable(
 	'session',
@@ -37,7 +37,9 @@ export const session = pgTable(
 		expiresAt: timestamp('expires_at').notNull(),
 		token: text('token').notNull().unique(),
 		createdAt: timestamp('created_at').defaultNow().notNull(),
-		updatedAt: timestamp('updated_at').$onUpdate(() => new Date()).notNull(),
+		updatedAt: timestamp('updated_at')
+			.$onUpdate(() => new Date())
+			.notNull(),
 		ipAddress: text('ip_address'),
 		userAgent: text('user_agent'),
 		userId: text('user_id')
@@ -66,7 +68,9 @@ export const account = pgTable(
 		scope: text('scope'),
 		password: text('password'),
 		createdAt: timestamp('created_at').defaultNow().notNull(),
-		updatedAt: timestamp('updated_at').$onUpdate(() => new Date()).notNull()
+		updatedAt: timestamp('updated_at')
+			.$onUpdate(() => new Date())
+			.notNull()
 	},
 	(table) => [
 		uniqueIndex('account_issuer_accountId_uidx').on(table.issuer, table.accountId),
@@ -82,7 +86,10 @@ export const verification = pgTable(
 		value: text('value').notNull(),
 		expiresAt: timestamp('expires_at').notNull(),
 		createdAt: timestamp('created_at').defaultNow().notNull(),
-		updatedAt: timestamp('updated_at').defaultNow().$onUpdate(() => new Date()).notNull()
+		updatedAt: timestamp('updated_at')
+			.defaultNow()
+			.$onUpdate(() => new Date())
+			.notNull()
 	},
 	(table) => [index('verification_identifier_idx').on(table.identifier)]
 );
@@ -100,7 +107,10 @@ export const twoFactor = pgTable(
 		failedVerificationCount: integer('failed_verification_count').default(0),
 		lockedUntil: timestamp('locked_until')
 	},
-	(table) => [index('twoFactor_secret_idx').on(table.secret), index('twoFactor_userId_idx').on(table.userId)]
+	(table) => [
+		index('twoFactor_secret_idx').on(table.secret),
+		index('twoFactor_userId_idx').on(table.userId)
+	]
 );
 
 export const relations = defineRelationsPart(
@@ -123,7 +133,11 @@ export const relations = defineRelationsPart(
 	})
 );
 
-const rangeSchema = z.object({ start_offset: z.number(), end_offset: z.number(), node_id: z.string() });
+const rangeSchema = z.object({
+	start_offset: z.number(),
+	end_offset: z.number(),
+	node_id: z.string()
+});
 const textValueSchema = z.object({
 	content: z.string(),
 	marks: z.array(rangeSchema),
@@ -134,11 +148,20 @@ const nodeArrayValueSchema = z.object({
 	marks: z.array(rangeSchema),
 	annotations: z.array(rangeSchema)
 });
-const nodePropertySchema = z.union([z.boolean(), z.number(), z.string(), textValueSchema, nodeArrayValueSchema]);
+const nodePropertySchema = z.union([
+	z.boolean(),
+	z.number(),
+	z.string(),
+	textValueSchema,
+	nodeArrayValueSchema
+]);
 
 export const portfolioDocumentSchema = z.object({
 	document_id: z.string(),
-	nodes: z.record(z.string(), z.object({ id: z.string(), type: z.string() }).catchall(nodePropertySchema))
+	nodes: z.record(
+		z.string(),
+		z.object({ id: z.string(), type: z.string() }).catchall(nodePropertySchema)
+	)
 });
 
 export type PortfolioDocument = z.infer<typeof portfolioDocumentSchema>;
@@ -202,5 +225,8 @@ export const auditLogs = pgTable(
 		userAgent: text('user_agent'),
 		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull()
 	},
-	(table) => [index('audit_log_target_idx').on(table.targetType, table.targetId), index('audit_log_created_at_idx').on(table.createdAt)]
+	(table) => [
+		index('audit_log_target_idx').on(table.targetType, table.targetId),
+		index('audit_log_created_at_idx').on(table.createdAt)
+	]
 );

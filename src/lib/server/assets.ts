@@ -14,7 +14,8 @@ export async function uploadAsset(input: {
 	const isImage = input.file.type.startsWith('image/');
 	const isVideo = input.file.type.startsWith('video/');
 	if (!isImage && !isVideo) throw new Error('Only image and video files are accepted');
-	if (input.file.size > (isImage ? MAX_IMAGE_BYTES : MAX_VIDEO_BYTES)) throw new Error('File is too large');
+	if (input.file.size > (isImage ? MAX_IMAGE_BYTES : MAX_VIDEO_BYTES))
+		throw new Error('File is too large');
 
 	const id = crypto.randomUUID();
 	const storage = getStorage();
@@ -28,11 +29,17 @@ export async function uploadAsset(input: {
 	if (input.file.type === 'video/quicktime') extension = 'mov';
 
 	if (isImage) {
-		const image = new Bun.Image(await input.file.arrayBuffer(), { maxPixels: 4096 * 4096, autoOrient: true });
+		const image = new Bun.Image(await input.file.arrayBuffer(), {
+			maxPixels: 4096 * 4096,
+			autoOrient: true
+		});
 		const metadata = await image.metadata();
 		width = Math.min(metadata.width, 2048);
 		height = Math.round(metadata.height * (width / metadata.width));
-		body = await image.resize(2048, 2048, { fit: 'inside', withoutEnlargement: true }).webp({ quality: 82 }).blob();
+		body = await image
+			.resize(2048, 2048, { fit: 'inside', withoutEnlargement: true })
+			.webp({ quality: 82 })
+			.blob();
 		mimeType = 'image/webp';
 		extension = 'webp';
 	}

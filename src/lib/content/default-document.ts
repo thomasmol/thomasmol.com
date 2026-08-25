@@ -27,9 +27,10 @@ export const defaultDocument: PortfolioDocument = {
 			id: 'profile',
 			type: 'profile',
 			name: text('Thomas Mol'),
-			intro: text('I am currently a Founding Engineer at pyannoteAI, based in Utrecht, the Netherlands.', [
-				{ id: 'pyannoteintro', label: 'pyannoteAI' }
-			]),
+			intro: text(
+				'I am currently a Founding Engineer at pyannoteAI, based in Utrecht, the Netherlands.',
+				[{ id: 'pyannoteintro', label: 'pyannoteAI' }]
+			),
 			image: '/thomas.webp'
 		},
 		whatido: {
@@ -82,14 +83,54 @@ export const defaultDocument: PortfolioDocument = {
 				{ id: 'xlink', label: 'X' }
 			])
 		},
-		pyannoteintro: { id: 'pyannoteintro', type: 'link', href: 'https://www.pyannote.ai/', target: '_blank' },
-		pyannottewhatido: { id: 'pyannottewhatido', type: 'link', href: 'https://www.pyannote.ai/', target: '_blank' },
-		audiogestwhatido: { id: 'audiogestwhatido', type: 'link', href: 'https://audiogest.app/', target: '_blank' },
-		whisperlink: { id: 'whisperlink', type: 'link', href: 'https://github.com/thomasmol/cog-whisper-diarization', target: '_blank' },
-		replicatelink: { id: 'replicatelink', type: 'link', href: 'https://replicate.com/thomasmol/whisper-diarization', target: '_blank' },
-		audiogestworklink: { id: 'audiogestworklink', type: 'link', href: 'https://audiogest.app/', target: '_blank' },
-		githublink: { id: 'githublink', type: 'link', href: 'https://github.com/thomasmol', target: '_blank' },
-		linkedinlink: { id: 'linkedinlink', type: 'link', href: 'https://www.linkedin.com/in/thomas-mol', target: '_blank' },
+		pyannoteintro: {
+			id: 'pyannoteintro',
+			type: 'link',
+			href: 'https://www.pyannote.ai/',
+			target: '_blank'
+		},
+		pyannottewhatido: {
+			id: 'pyannottewhatido',
+			type: 'link',
+			href: 'https://www.pyannote.ai/',
+			target: '_blank'
+		},
+		audiogestwhatido: {
+			id: 'audiogestwhatido',
+			type: 'link',
+			href: 'https://audiogest.app/',
+			target: '_blank'
+		},
+		whisperlink: {
+			id: 'whisperlink',
+			type: 'link',
+			href: 'https://github.com/thomasmol/cog-whisper-diarization',
+			target: '_blank'
+		},
+		replicatelink: {
+			id: 'replicatelink',
+			type: 'link',
+			href: 'https://replicate.com/thomasmol/whisper-diarization',
+			target: '_blank'
+		},
+		audiogestworklink: {
+			id: 'audiogestworklink',
+			type: 'link',
+			href: 'https://audiogest.app/',
+			target: '_blank'
+		},
+		githublink: {
+			id: 'githublink',
+			type: 'link',
+			href: 'https://github.com/thomasmol',
+			target: '_blank'
+		},
+		linkedinlink: {
+			id: 'linkedinlink',
+			type: 'link',
+			href: 'https://www.linkedin.com/in/thomas-mol',
+			target: '_blank'
+		},
 		xlink: { id: 'xlink', type: 'link', href: 'https://x.com/thomas_mol', target: '_blank' }
 	}
 };

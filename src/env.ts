@@ -2,7 +2,11 @@ import { defineEnvVars } from '@sveltejs/kit/env';
 import { z } from 'zod';
 
 export const variables = defineEnvVars({
-	DATABASE_URL: { schema: z.url().refine((value) => value.startsWith('postgres://') || value.startsWith('postgresql://')) },
+	DATABASE_URL: {
+		schema: z
+			.url()
+			.refine((value) => value.startsWith('postgres://') || value.startsWith('postgresql://'))
+	},
 	BETTER_AUTH_SECRET: { schema: z.string().min(32) },
 	BETTER_AUTH_URL: { schema: z.url() },
 	S3_BUCKET: { schema: z.string().min(1) },

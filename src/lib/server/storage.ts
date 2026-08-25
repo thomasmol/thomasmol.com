@@ -1,4 +1,10 @@
-import { S3_ACCESS_KEY_ID, S3_BUCKET, S3_ENDPOINT, S3_REGION, S3_SECRET_ACCESS_KEY } from '$app/env/private';
+import {
+	S3_ACCESS_KEY_ID,
+	S3_BUCKET,
+	S3_ENDPOINT,
+	S3_REGION,
+	S3_SECRET_ACCESS_KEY
+} from '$app/env/private';
 import { S3Client } from 'bun';
 
 export function getStorage() {

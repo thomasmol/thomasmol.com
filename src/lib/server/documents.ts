@@ -1,12 +1,23 @@
 import { defaultDocument } from '#lib/content/default-document.js';
 import { and, desc, eq } from 'drizzle-orm';
 import { db } from './db/index.js';
-import { assets, auditLogs, documentRevisions, documents, type PortfolioDocument } from './db/schema.js';
+import {
+	assets,
+	auditLogs,
+	documentRevisions,
+	documents,
+	type PortfolioDocument
+} from './db/schema.js';
 
 export async function getHomeDocument() {
 	await db
 		.insert(documents)
-		.values({ id: 'home', slug: 'home', title: 'Thomas Mol - Founding Engineer', data: defaultDocument })
+		.values({
+			id: 'home',
+			slug: 'home',
+			title: 'Thomas Mol - Founding Engineer',
+			data: defaultDocument
+		})
 		.onConflictDoNothing();
 
 	const [document] = await db.select().from(documents).where(eq(documents.id, 'home')).limit(1);
@@ -21,7 +32,12 @@ export async function saveHomeDocument(input: {
 	userAgent: string | null;
 }) {
 	return db.transaction(async (tx) => {
-		const [current] = await tx.select().from(documents).where(eq(documents.id, 'home')).for('update').limit(1);
+		const [current] = await tx
+			.select()
+			.from(documents)
+			.where(eq(documents.id, 'home'))
+			.for('update')
+			.limit(1);
 
 		if (!current || current.revision !== input.revision) {
 			return null;
