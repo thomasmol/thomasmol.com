@@ -16,6 +16,7 @@ export default defineConfig({
 			},
 			adapter: adapter({
 				buildOptions: {
+					// @ts-ignore Although type does not exist, this is still propogated to config, but without it build won't start
 					packages: 'external'
 				}
 			}),
