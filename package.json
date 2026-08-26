@@ -31,7 +31,7 @@
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-bun": "1.0.0-next.1",
+		"@sveltejs/adapter-bun": "^1.0.0-next.1",
 		"@sveltejs/kit": "next",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"@tailwindcss/vite": "^4.3.0",
@@ -43,8 +43,5 @@
 		"tailwindcss": "^4.3.0",
 		"typescript": "^6.0.3",
 		"vite": "^8.0.16"
-	},
-	"patchedDependencies": {
-		"@sveltejs/adapter-bun@1.0.0-next.1": "patches/@sveltejs%2Fadapter-bun@1.0.0-next.1.patch"
 	}
 }
