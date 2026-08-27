@@ -7,7 +7,9 @@ declare global {
 			user: import('better-auth').User | null;
 		}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			settings?: 'account' | 'integrations';
+		}
 		// interface Platform {}
 	}
 }
