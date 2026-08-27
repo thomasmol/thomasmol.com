@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import AdminEnvironment from '#lib/admin/AdminEnvironment.svelte';
+	import Panel from '#lib/admin/Panel.svelte';
 
 	function getSection(section: string | undefined) {
 		if (section === 'integrations') return 'integrations';
@@ -8,4 +8,4 @@
 	}
 </script>
 
-<AdminEnvironment directSetting={getSection(page.params.section)} />
+<Panel directSetting={getSection(page.params.section)} />

@@ -1,6 +1,7 @@
 import { BETTER_AUTH_SECRET, BETTER_AUTH_URL } from '$app/env/private';
 import { getRequestEvent } from '$app/server';
 import { drizzleAdapter } from '@better-auth/drizzle-adapter/relations-v2';
+import { error, type RequestEvent } from '@sveltejs/kit';
 import { betterAuth } from 'better-auth';
 import { twoFactor } from 'better-auth/plugins';
 import { sveltekitCookies } from 'better-auth/svelte-kit';
@@ -17,3 +18,8 @@ export const auth = betterAuth({
 	},
 	plugins: [twoFactor({ issuer: 'thomasmol.com' }), sveltekitCookies(getRequestEvent)]
 });
+
+export function requireAuth(event: RequestEvent) {
+	if (!event.locals.user) error(401, 'Authentication required');
+	return event.locals.user;
+}

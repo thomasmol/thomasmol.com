@@ -72,7 +72,7 @@ export async function saveHomeDocument(input: {
 	});
 }
 
-export async function getAdminOverview() {
+export async function loadOverview() {
 	const document = await getHomeDocument();
 	const revisions = await db
 		.select()

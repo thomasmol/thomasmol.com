@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AdminEnvironment from '#lib/admin/AdminEnvironment.svelte';
+	import Panel from '#lib/admin/Panel.svelte';
 </script>
 
-<AdminEnvironment />
+<Panel />

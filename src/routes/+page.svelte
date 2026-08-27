@@ -8,7 +8,7 @@
 
 	const keyMapper = new KeyMapper();
 	const appKeymap = define_keymap({
-		'meta+e,ctrl+e': [{ is_enabled: () => data.isAdmin, execute: toggleEdit }],
+		'meta+e,ctrl+e': [{ is_enabled: () => data.canEdit, execute: toggleEdit }],
 		'meta+s,ctrl+s': [{ is_enabled: () => editable && !saving, execute: save }]
 	});
 	keyMapper.push_scope(appKeymap);
@@ -71,7 +71,7 @@
 
 <Svedit {session} path={[session.doc.document_id]} bind:editable />
 
-{#if data.isAdmin}
+{#if data.canEdit}
 	{#if editable}
 		<div class="fixed right-4 bottom-4 left-4 z-50 flex items-center justify-end gap-2 rounded-xl border border-olive-300 bg-olive-50/95 p-3 font-serif text-sm text-olive-900 shadow-lg backdrop-blur sm:left-auto dark:border-olive-700 dark:bg-olive-950/95 dark:text-olive-100">
 			{#if saveError}<p class="mr-auto max-w-xs text-red-700 dark:text-red-300">{saveError}</p>{/if}
