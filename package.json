@@ -13,7 +13,7 @@
 		"start": "bun ./build",
 		"preview": "bun --bun vite preview",
 		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --incremental --tsgo",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"@better-auth/drizzle-adapter": "^1.7.1",
+		"@typescript/native": "npm:typescript@7",
 		"better-auth": "^1.7.1",
 		"drizzle-orm": "^1.0.0-rc.4",
 		"oxfmt": "^0.64.0",
@@ -41,7 +42,7 @@
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.6.0",
 		"tailwindcss": "^4.3.0",
-		"typescript": "^6.0.3",
+		"typescript": "~6",
 		"vite": "^8.0.16"
 	}
 }
