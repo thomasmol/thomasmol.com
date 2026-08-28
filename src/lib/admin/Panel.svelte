@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { createAuthClient } from 'better-auth/svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { getOverview, uploadMedia } from '#lib/content.remote.js';
@@ -13,14 +12,8 @@
 	const data = await getOverview();
 	let busy = $state(false);
 	let message = $state('');
-	const authClient = createAuthClient();
 
 	const dateFormat = new Intl.DateTimeFormat('en', { dateStyle: 'medium', timeStyle: 'short' });
-
-	async function signOut() {
-		const result = await authClient.signOut();
-		if (!result.error) location.reload();
-	}
 
 	async function openSettings(section: SettingsSection, event?: MouseEvent) {
 		event?.preventDefault();
@@ -67,7 +60,7 @@
 	<div class="mx-auto max-w-5xl">
 		<header class="flex flex-wrap items-start justify-between gap-4 border-b border-olive-300 pb-6 dark:border-olive-700">
 			<div><p class="text-sm">Signed in as {data.user.email}</p><h1 class="mt-1 text-3xl font-semibold tracking-tight">Portfolio admin</h1></div>
-			<div class="flex gap-2"><a href="/" class="rounded-lg border border-olive-300 px-4 py-2 text-sm dark:border-olive-700">Edit homepage</a><a href="/admin/settings/account" onclick={(event) => openSettings('account', event)} class="rounded-lg border border-olive-300 px-4 py-2 text-sm dark:border-olive-700">Settings</a><button type="button" onclick={signOut} class="rounded-lg border border-olive-300 px-4 py-2 text-sm dark:border-olive-700">Sign out</button></div>
+			<div class="flex gap-2"><a href="/" class="rounded-lg border border-olive-300 px-4 py-2 text-sm dark:border-olive-700">Edit homepage</a></div>
 		</header>
 
 		<div class="mt-8 grid gap-8 lg:grid-cols-2">

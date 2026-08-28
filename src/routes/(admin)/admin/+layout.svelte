@@ -1,56 +1,71 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { createAuthClient } from 'better-auth/svelte';
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
 	import HistoryIcon from '@lucide/svelte/icons/history';
-	import HouseIcon from '@lucide/svelte/icons/house';
 	import ImageIcon from '@lucide/svelte/icons/image';
 	import LayoutDashboardIcon from '@lucide/svelte/icons/layout-dashboard';
+	import LogOutIcon from '@lucide/svelte/icons/log-out';
 	import ScrollTextIcon from '@lucide/svelte/icons/scroll-text';
 	import SettingsIcon from '@lucide/svelte/icons/settings';
 	import * as Sidebar from '#lib/components/ui/sidebar/index.js';
 
 	let { children } = $props();
+	const authClient = createAuthClient();
+
+	async function signOut() {
+		const result = await authClient.signOut();
+		if (!result.error) location.reload();
+	}
 </script>
 
 <Sidebar.Provider>
-	<Sidebar.Root>
-		<Sidebar.Header class="border-b">
-			<div class="px-2 py-1 text-sm font-semibold">Portfolio admin</div>
+	<Sidebar.Root collapsible="icon">
+		<Sidebar.Header>
+			<Sidebar.Menu>
+				<Sidebar.MenuItem>
+					<Sidebar.MenuButton tooltipContent="View site">
+						{#snippet child({ props })}
+							<a href="/" {...props}><ExternalLinkIcon /><span>View site</span></a>
+						{/snippet}
+					</Sidebar.MenuButton>
+				</Sidebar.MenuItem>
+			</Sidebar.Menu>
 		</Sidebar.Header>
 		<Sidebar.Content>
 			<Sidebar.Group>
-				<Sidebar.GroupLabel>Manage</Sidebar.GroupLabel>
 				<Sidebar.GroupContent>
 					<Sidebar.Menu>
 						<Sidebar.MenuItem>
-							<Sidebar.MenuButton isActive={page.url.pathname === '/admin' && !page.url.hash}>
+							<Sidebar.MenuButton tooltipContent="Overview" isActive={page.url.pathname === '/admin' && !page.url.hash}>
 								{#snippet child({ props })}
 									<a href="/admin" {...props}><LayoutDashboardIcon /><span>Overview</span></a>
 								{/snippet}
 							</Sidebar.MenuButton>
 						</Sidebar.MenuItem>
 						<Sidebar.MenuItem>
-							<Sidebar.MenuButton isActive={page.url.pathname === '/admin' && page.url.hash === '#media'}>
+							<Sidebar.MenuButton tooltipContent="Media" isActive={page.url.pathname === '/admin' && page.url.hash === '#media'}>
 								{#snippet child({ props })}
 									<a href="/admin#media" {...props}><ImageIcon /><span>Media</span></a>
 								{/snippet}
 							</Sidebar.MenuButton>
 						</Sidebar.MenuItem>
 						<Sidebar.MenuItem>
-							<Sidebar.MenuButton isActive={page.url.pathname === '/admin' && page.url.hash === '#revisions'}>
+							<Sidebar.MenuButton tooltipContent="Revisions" isActive={page.url.pathname === '/admin' && page.url.hash === '#revisions'}>
 								{#snippet child({ props })}
 									<a href="/admin#revisions" {...props}><HistoryIcon /><span>Revisions</span></a>
 								{/snippet}
 							</Sidebar.MenuButton>
 						</Sidebar.MenuItem>
 						<Sidebar.MenuItem>
-							<Sidebar.MenuButton isActive={page.url.pathname === '/admin' && page.url.hash === '#audit'}>
+							<Sidebar.MenuButton tooltipContent="Audit" isActive={page.url.pathname === '/admin' && page.url.hash === '#audit'}>
 								{#snippet child({ props })}
 									<a href="/admin#audit" {...props}><ScrollTextIcon /><span>Audit</span></a>
 								{/snippet}
 							</Sidebar.MenuButton>
 						</Sidebar.MenuItem>
 						<Sidebar.MenuItem>
-							<Sidebar.MenuButton isActive={page.url.pathname.startsWith('/admin/settings/')}>
+							<Sidebar.MenuButton tooltipContent="Settings" isActive={page.url.pathname.startsWith('/admin/settings/')}>
 								{#snippet child({ props })}
 									<a href="/admin/settings/account" {...props}><SettingsIcon /><span>Settings</span></a>
 								{/snippet}
@@ -63,10 +78,8 @@
 		<Sidebar.Footer class="border-t">
 			<Sidebar.Menu>
 				<Sidebar.MenuItem>
-					<Sidebar.MenuButton isActive={page.url.pathname === '/'}>
-						{#snippet child({ props })}
-							<a href="/" {...props}><HouseIcon /><span>Homepage</span></a>
-						{/snippet}
+					<Sidebar.MenuButton type="button" tooltipContent="Sign out" onclick={signOut}>
+						<LogOutIcon /><span>Sign out</span>
 					</Sidebar.MenuButton>
 				</Sidebar.MenuItem>
 			</Sidebar.Menu>
