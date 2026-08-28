@@ -2,7 +2,7 @@
 
 Thomas Mol's personal portfolio with a built-in CMS. The public site shows one editable portfolio page. CMS accounts are closed, sign in through `/admin`, and all have the same access. Signed-in users edit the homepage inline, upload media, and view revision and audit history.
 
-The app uses SvelteKit, Svelte 5, TypeScript, Tailwind CSS, and Svedit. Better Auth handles CMS sessions and two-factor authentication. PostgreSQL and Drizzle store content and history; S3-compatible object storage holds media. Bun is the package manager, runtime, and deployment target.
+The app uses SvelteKit, Svelte 5, TypeScript, Tailwind CSS, and Svedit. Better Auth handles CMS sessions and two-factor authentication. PostgreSQL and Drizzle store content and history; S3-compatible object storage holds media. Bun is the package manager, runtime, and deployment target. Oxfmt and Oxlint are used for formatting and linting.
 
 ## Development
 

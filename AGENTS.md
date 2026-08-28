@@ -14,6 +14,7 @@
 - PostgreSQL and Drizzle for content, revisions, assets, audit logs, and auth data
 - S3-compatible object storage for uploaded media
 - Bun for packages, runtime, scripts, and deployment
+- Oxfmt and Oxlint for formatting and linting
 
 ## Work
 
