@@ -9,8 +9,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.session = session?.session ?? null;
 	event.locals.user = session?.user ?? null;
 
-	const isAdminRoute = event.route.id === '/admin' || event.route.id?.startsWith('/admin/');
-	const isLoginRoute = event.route.id === '/admin/login';
+	const isAdminRoute = event.route.id?.startsWith('/(admin)/');
+	const isLoginRoute = event.route.id === '/(auth)/admin/login';
 
 	if (isLoginRoute && event.locals.user) redirect(303, '/admin');
 	if (isAdminRoute && !isLoginRoute && !event.locals.user) redirect(303, '/admin/login');
